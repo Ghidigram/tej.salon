@@ -245,7 +245,11 @@
 
       /* About */
       .ab-grid{grid-template-columns:1fr!important;gap:3rem!important;}
-      .ab-grid .srr{max-width:480px;margin:0 auto;width:100%;}
+      .ab-grid .srr{width:100%!important;}
+
+      /* Services header left-align on tablet when wrapped */
+      .svc-header{gap:1.2rem!important;}
+      .svc-sub{text-align:left!important;max-width:100%!important;}
 
       /* Services */
       .svc-grid{grid-template-columns:1fr 1fr!important;}
@@ -290,12 +294,12 @@
       /* About — reel frame full width, controlled height */
       .ab-grid{grid-template-columns:1fr!important;gap:2.5rem!important;}
       .ab-grid .srr{max-width:100%!important;padding:0!important;}
-      /* Constrain the reel frame so it doesn't go full-screen tall */
-      .ab-grid .srr > div{max-width:340px!important;margin:0 auto!important;}
-      /* Hide the decorative offset square on mobile */
-      .ab-grid .srr > div > div:first-child{display:none!important;}
-      /* Give the reel frame a shorter aspect ratio on mobile */
-      .ab-grid .srr iframe{min-height:420px;}
+      /* Reel frame fills column width on mobile */
+      .ab-grid .srr > div{width:100%!important;max-width:100%!important;}
+
+      /* Services header: stack and left-align on mobile */
+      .svc-header{flex-direction:column!important;align-items:flex-start!important;gap:1rem!important;margin-bottom:3rem!important;}
+      .svc-sub{text-align:left!important;max-width:100%!important;}
 
       /* Services */
       .svc-grid{grid-template-columns:1fr!important;}
@@ -344,10 +348,6 @@
 
       /* Hero stats tighter */
       .hero-text-col [style*="gap:2.2rem"]{gap:1rem!important;flex-wrap:wrap!important;}
-
-      /* About reel frame — smaller on small phones */
-      .ab-grid .srr > div{max-width:290px!important;}
-      .ab-grid .srr iframe{min-height:360px!important;}
 
       /* Services */
       .svc{padding:1.6rem 1.2rem!important;}
@@ -701,13 +701,13 @@
 
       <!-- Right: Image Frame -->
       <div class="srr d1" style="display:flex;justify-content:center;align-items:center;padding:1rem 0;">
-        <div style="position:relative;width:100%;max-width:420px;">
+        <div style="position:relative;width:100%;">
 
           <!-- Decorative background square offset -->
-          <div style="position:absolute;bottom:-18px;right:-18px;width:85%;height:85%;border-radius:20px;background:var(--clay-pl);z-index:0;"></div>
+          <div style="position:absolute;bottom:-18px;right:-18px;width:85%;height:85%;border-radius:24px;background:var(--clay-pl);z-index:0;"></div>
 
-          <!-- Main image frame — Instagram Reel fills it -->
-          <div style="position:relative;z-index:1;border-radius:20px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 24px 64px rgba(46,31,22,.18);">
+          <!-- Main frame — matches why-carousel aspect ratio and border radius -->
+          <div style="position:relative;z-index:1;border-radius:24px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 24px 64px rgba(46,31,22,.18);">
             <iframe
               src="https://www.instagram.com/reel/DNk5nPXqbue/embed/"
               style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;display:block;"
@@ -732,7 +732,7 @@
   <div class="wrap">
 
     <!-- Header -->
-    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:2rem;margin-bottom:5rem;">
+    <div class="svc-header" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:2rem;margin-bottom:5rem;">
       <div>
         <div class="sr" style="display:flex;align-items:center;gap:.9rem;margin-bottom:1.6rem;">
           <div class="clay-bar"></div>
@@ -740,7 +740,7 @@
         </div>
         <h2 class="d-lg sr d1" style="color:var(--espresso);">Signature <em class="clay-text" style="font-style:italic;">Services</em></h2>
       </div>
-      <p class="sr d2" style="font-size:.95rem;font-weight:400;color:#3d2a1a;max-width:300px;line-height:1.8;text-align:right;">
+      <p class="svc-sub sr d2" style="font-size:.95rem;font-weight:400;color:#3d2a1a;max-width:300px;line-height:1.8;text-align:right;">
         Six ways we take care of you. All in one place, all done properly.
       </p>
     </div>
@@ -1017,15 +1017,30 @@
 </script>
 
 <!-- ══════════════ CTA ══════════════ -->
-<section id="cta" style="padding:9rem 0;position:relative;overflow:hidden;">
-  <div class="cta-orb co1"></div>
-  <div class="cta-orb co2"></div>
+<section id="cta" style="padding:9rem 0;position:relative;overflow:hidden;min-height:580px;">
+
+  <!-- Background image -->
+  <div style="position:absolute;inset:0;z-index:0;">
+    <img
+      src="https://images.unsplash.com/photo-1633681122882-de7b3e9ef6a7?w=1600&h=900&q=85&auto=format&fit=crop&crop=center"
+      alt="Luxury salon interior"
+      loading="lazy"
+      style="width:100%;height:100%;object-fit:cover;display:block;"
+      onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1600&h=900&q=80&fit=crop'"
+    />
+  </div>
+
+  <!-- Dark gradient overlay — bottom heavy so text is readable -->
+  <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(160deg,rgba(20,10,5,.82) 0%,rgba(30,14,8,.75) 50%,rgba(20,10,5,.88) 100%);"></div>
+
+  <!-- Subtle warm tint layer -->
+  <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(50,20,10,.45) 0%,transparent 60%);"></div>
 
   <!-- Decorative rings -->
-  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:720px;height:720px;border:1px solid rgba(37,211,102,.08);border-radius:50%;pointer-events:none;animation:ringPop 9s ease-in-out infinite;"></div>
-  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:520px;height:520px;border:1px solid rgba(37,211,102,.12);border-radius:50%;pointer-events:none;animation:ringPop 9s 1.5s ease-in-out infinite;"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:720px;height:720px;border:1px solid rgba(37,211,102,.07);border-radius:50%;pointer-events:none;animation:ringPop 9s ease-in-out infinite;z-index:2;"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:520px;height:520px;border:1px solid rgba(37,211,102,.1);border-radius:50%;pointer-events:none;animation:ringPop 9s 1.5s ease-in-out infinite;z-index:2;"></div>
 
-  <div class="wrap" style="text-align:center;position:relative;z-index:2;">
+  <div class="wrap" style="text-align:center;position:relative;z-index:3;">
     <div class="sr" style="display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1.8rem;">
       <div style="width:28px;height:1.5px;background:linear-gradient(to right,transparent,rgba(255,255,255,.5));border-radius:2px;"></div>
       <span class="lbl" style="color:rgba(255,255,255,.75);">Book an Appointment</span>
@@ -1036,7 +1051,7 @@
       Elevate Your Beauty<br/><em style="font-style:italic;background:linear-gradient(135deg,var(--clay-lt),var(--rose-lt));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Experience Today</em>
     </h2>
 
-    <p class="sr d2" style="font-size:1rem;font-weight:400;color:rgba(255,255,255,.8);max-width:440px;margin:0 auto 3rem;line-height:1.85;">
+    <p class="sr d2" style="font-size:1rem;font-weight:400;color:rgba(255,255,255,.82);max-width:440px;margin:0 auto 3rem;line-height:1.85;">
       Ready for a fresh look or just some well-deserved me-time? Chat with us on WhatsApp and we will sort out a time that works for you.
     </p>
 
