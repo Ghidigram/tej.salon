@@ -238,25 +238,26 @@
        RESPONSIVE — TABLET (≤1024px)
     ══════════════════════════════════════ */
     @media(max-width:1024px){
-      /* Hero: stack to single column, hide image grid */
+      /* Hero */
       #hero{grid-template-columns:1fr!important;}
       .hero-img-col{display:none!important;}
+      .hero-text-col{padding:8rem 3rem 6rem 3rem!important;}
 
-      /* Hero text padding for tablet */
-      .hero-text-col{
-        padding:8rem 3rem 6rem 3rem !important;
-      }
+      /* About */
+      .ab-grid{grid-template-columns:1fr!important;gap:3rem!important;}
+      .ab-grid .srr{max-width:480px;margin:0 auto;width:100%;}
 
-      /* About: single column */
-      .ab-grid{grid-template-columns:1fr!important;gap:2.5rem!important;}
+      /* Services */
+      .svc-grid{grid-template-columns:1fr 1fr!important;}
 
-      /* Footer: 2 col on tablet */
-      .ft-grid{grid-template-columns:1fr 1fr!important;gap:2.5rem!important;}
+      /* Why split — stack on tablet */
+      .why-split{grid-template-columns:1fr!important;gap:3.5rem!important;}
+      .why-split > div:first-child{max-width:520px;margin:0 auto;width:100%;}
 
-      /* Why grid: 2x2 on tablet */
-      .why-grid{grid-template-columns:1fr 1fr!important;}
+      /* Footer: 2x2 */
+      .ft-grid{grid-template-columns:1fr 1fr!important;gap:2rem!important;}
 
-      /* Section padding reduction */
+      /* Section padding */
       #about,#services,#why,#cta{padding:6rem 0!important;}
     }
 
@@ -272,87 +273,61 @@
       body{cursor:auto;}
       #cur,#cur-r{display:none;}
 
-      /* Global wrap padding */
+      /* Global */
       .wrap{padding:0 1.1rem!important;}
-
-      /* Section padding */
       #about,#services,#why,#cta{padding:4.5rem 0!important;}
 
-      /* Hero: full-width mobile */
+      /* Hero */
       #hero{min-height:100svh;}
-      .hero-text-col{
-        padding:7rem 1.25rem 5rem 1.25rem !important;
-        justify-content:flex-start;
-      }
-
-      /* Hero headline: smaller on mobile */
+      .hero-text-col{padding:7rem 1.25rem 5rem 1.25rem!important;justify-content:flex-start;}
       .d-xl{font-size:clamp(2.6rem,11vw,4rem)!important;line-height:.95!important;}
-
-      /* Hero subtext */
       #hero p{font-size:.95rem!important;max-width:100%!important;}
-
-      /* Hero stats: tighter spacing */
-      .hero-text-col > div:nth-of-type(4){
-        gap:1.4rem!important;
-        margin-top:2.5rem!important;
-      }
-
-      /* Hero scroll cue: hide on mobile */
       .hero-text-col > div:last-of-type{display:none!important;}
 
-      /* Section headings */
+      /* Type */
       .d-lg{font-size:clamp(1.8rem,7vw,2.6rem)!important;}
 
-      /* About grid stacked */
-      .ab-grid{grid-template-columns:1fr!important;gap:2rem!important;}
+      /* About — reel frame full width, controlled height */
+      .ab-grid{grid-template-columns:1fr!important;gap:2.5rem!important;}
+      .ab-grid .srr{max-width:100%!important;padding:0!important;}
+      /* Constrain the reel frame so it doesn't go full-screen tall */
+      .ab-grid .srr > div{max-width:340px!important;margin:0 auto!important;}
+      /* Hide the decorative offset square on mobile */
+      .ab-grid .srr > div > div:first-child{display:none!important;}
+      /* Give the reel frame a shorter aspect ratio on mobile */
+      .ab-grid .srr iframe{min-height:420px;}
 
-      /* About offset card: remove margin-left on mobile */
-      .o-card[style*="margin-left"]{margin-left:0!important;}
-
-      /* Services: single column on mobile */
+      /* Services */
       .svc-grid{grid-template-columns:1fr!important;}
+      .svc{padding:1.8rem 1.5rem!important;}
 
-      /* Hero text col */
-      .hero-text-col{padding:7rem 1.25rem 5rem 1.25rem !important;}
+      /* Why split — stack, carousel then text */
+      .why-split{grid-template-columns:1fr!important;gap:2.5rem!important;}
+      .why-split > div:first-child{max-width:100%!important;margin:0!important;}
+      /* Limit carousel height on mobile */
+      .why-split > div:first-child > div:first-child{aspect-ratio:3/4!important;}
+      /* Checklist rows readable on mobile */
+      .why-item-row{gap:.8rem!important;}
+      .why-item-row span:first-of-type{font-size:.92rem!important;}
+      .why-item-row span:last-of-type{font-size:.88rem!important;}
 
-      /* Why grid: 1 col on mobile */
-      .why-grid{grid-template-columns:1fr!important;}
-
-      /* Testimonial padding */
-      .testi{padding:2.2rem 1.5rem!important;}
-
-      /* CTA section padding */
+      /* CTA */
       #cta .wrap{padding:0 1.25rem!important;}
       #cta h2{font-size:clamp(1.8rem,7vw,2.6rem)!important;}
       #cta p{font-size:.95rem!important;}
-
-      /* CTA button: full width on mobile */
-      .btn-cta-main{
-        padding:1rem 2rem!important;
-        font-size:.72rem!important;
-        width:100%;
-        justify-content:center;
-      }
+      .btn-cta-main{padding:1rem 1.8rem!important;font-size:.72rem!important;width:100%;justify-content:center;}
       .btn-c{font-size:.68rem!important;padding:.8rem 1.6rem!important;}
       .btn-o{font-size:.68rem!important;padding:.8rem 1.6rem!important;}
 
-      /* Footer: single column */
+      /* Footer */
       .ft-grid{grid-template-columns:1fr!important;gap:2rem!important;}
 
-      /* Footer nav links: wrap */
-      footer [style*="display:flex;gap:2rem"]{
-        gap:1.2rem!important;
-        flex-wrap:wrap!important;
-      }
-
-      /* Marquee: slightly slower on mobile */
+      /* Marquee */
       .mq-inner{animation-duration:20s!important;}
 
-      /* Hide decorative floating pills on mobile */
+      /* Hide decorative elements */
       .fpill.grid-badge{display:none!important;}
-
-      /* Hide decorative rings in CTA on small screens */
-      #cta [style*="720px"],[style*="520px"]{display:none;}
+      #cta > div[style*="720px"],#cta > div[style*="520px"]{display:none!important;}
     }
 
     /* ══════════════════════════════════════
@@ -361,37 +336,38 @@
     @media(max-width:480px){
       .d-xl{font-size:clamp(2.2rem,10vw,3rem)!important;}
       .d-lg{font-size:clamp(1.6rem,7vw,2.2rem)!important;}
+      .hero-text-col{padding:6.5rem 1rem 4rem 1rem!important;}
 
-      .hero-text-col{
-        padding:6.5rem 1rem 4rem 1rem !important;
-      }
+      /* Hero CTAs stack vertically */
+      .hero-text-col [style*="flex-wrap:wrap;gap:1rem;margin-top:2.6rem"]{flex-direction:column!important;}
+      #hero .btn-c,#hero .btn-o{width:100%!important;justify-content:center!important;}
 
-      /* Stack CTAs vertically on very small screens */
-      #hero [style*="display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.6rem"]{
-        flex-direction:column!important;
-      }
-      #hero .btn-c, #hero .btn-o{
-        width:100%!important;
-        justify-content:center!important;
-      }
+      /* Hero stats tighter */
+      .hero-text-col [style*="gap:2.2rem"]{gap:1rem!important;flex-wrap:wrap!important;}
 
-      /* Stats row: tighter */
-      #hero [style*="gap:2.2rem"]{gap:1rem!important;}
-      #hero [style*="font-size:2.6rem"]{font-size:2rem!important;}
+      /* About reel frame — smaller on small phones */
+      .ab-grid .srr > div{max-width:290px!important;}
+      .ab-grid .srr iframe{min-height:360px!important;}
 
-      /* Service cards padding */
-      .svc{padding:1.8rem 1.4rem!important;}
+      /* Services */
+      .svc{padding:1.6rem 1.2rem!important;}
+      .svc-n{font-size:1.1rem!important;}
 
-      /* Why cards padding */
-      .why-c{padding:1.5rem 1.2rem!important;}
+      /* Why carousel dots container */
+      #why-dots{gap:.4rem!important;}
 
-      /* Testimonial */
-      .testi{padding:1.8rem 1.2rem!important;}
-      .testi blockquote{font-size:1rem!important;}
+      /* Why checklist tighter */
+      .why-item-row{gap:.7rem!important;}
+      .why-split > div:last-child > div:nth-child(3){gap:1.2rem!important;}
+
+      /* Why book btn full width */
+      .why-split .btn-c{width:100%!important;justify-content:center!important;}
 
       /* Footer */
       footer{padding:3rem 0 2rem!important;}
-      footer [style*="font-size:2rem"]{font-size:1.6rem!important;}
+
+      /* CTA button full width */
+      .btn-cta-main{padding:.9rem 1.4rem!important;}
     }
 
     .hov-link{text-decoration:none;color:var(--mink);font-size:.75rem;letter-spacing:.1em;position:relative;transition:color .25s;}
@@ -545,7 +521,7 @@
     <!-- Eyebrow -->
     <div style="display:flex;align-items:center;gap:.9rem;margin-bottom:2.4rem;animation:heroFade .9s .1s both;">
       <div class="clay-bar"></div>
-      <span class="lbl" style="color:var(--clay);">TEJ Salon &amp; Spa, Allen, Ikeja</span>
+      <span class="lbl" style="color:var(--clay);">TEJ Salon &amp; Spa &nbsp;·&nbsp; Ikeja &amp; Lekki</span>
     </div>
 
     <!-- Headline -->
@@ -556,7 +532,7 @@
 
     <!-- Sub -->
     <p style="font-size:1.05rem;font-weight:400;color:#3d2a1a;max-width:420px;line-height:1.88;margin-top:1.8rem;animation:heroFade .9s .77s both;">
-      Walk in feeling tired. Walk out feeling like yourself again. We do hair, skin, nails, and spa all in one beautiful space right here in Allen, Ikeja.
+      Walk in feeling tired. Walk out feeling like yourself again. We do hair, skin, nails, and spa at our two locations in Allen, Ikeja and Lekki Phase 1.
     </p>
 
     <!-- CTAs -->
@@ -723,39 +699,24 @@
         </div>
       </div>
 
-      <!-- Right stacked cards -->
-      <div style="display:flex;flex-direction:column;gap:1.2rem;">
-        <div class="o-card srr d1" style="padding:1.8rem 2rem;">
-          <div style="display:flex;align-items:center;gap:1.1rem;">
-            <div style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--clay-pl),var(--rose-pl));display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">🌸</div>
-            <div>
-              <h3 style="font-size:1.05rem;font-weight:300;color:var(--espresso);margin-bottom:.3rem;">A Space That Feels Like Yours</h3>
-              <p style="font-size:.9rem;font-weight:400;color:#3d2a1a;line-height:1.65;">Clean, calm, and welcoming. The kind of place where you can breathe, relax, and just enjoy being here.</p>
-            </div>
-          </div>
-        </div>
-        <div class="o-card srr d2" style="padding:1.8rem 2rem;margin-left:2.2rem;">
-          <div style="display:flex;align-items:center;gap:1.1rem;">
-            <div style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--sage-pl),rgba(122,146,130,.15));display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">✨</div>
-            <div>
-              <h3 style="font-size:1.05rem;font-weight:300;color:var(--espresso);margin-bottom:.3rem;">People Who Know What They're Doing</h3>
-              <p style="font-size:.9rem;font-weight:400;color:#3d2a1a;line-height:1.65;">Trained, experienced, and genuinely passionate. Our team keeps up with what's trending and what actually works.</p>
-            </div>
-          </div>
-        </div>
-        <div class="o-card srr d3" style="padding:1.8rem 2rem;">
-          <div style="display:flex;align-items:center;gap:1.1rem;">
-            <div style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,rgba(196,112,74,.12),rgba(201,144,156,.1));display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">💎</div>
-            <div>
-              <h3 style="font-size:1.05rem;font-weight:300;color:var(--espresso);margin-bottom:.3rem;">Made Just for You</h3>
-              <p style="font-size:.9rem;font-weight:400;color:#3d2a1a;line-height:1.65;">We listen first. Then we get to work. No rushing, no guessing just exactly what you came for.</p>
-            </div>
-          </div>
-        </div>
+      <!-- Right: Image Frame -->
+      <div class="srr d1" style="display:flex;justify-content:center;align-items:center;padding:1rem 0;">
+        <div style="position:relative;width:100%;max-width:420px;">
 
-        <!-- Quote pull-out -->
-        <div style="margin-top:.4rem;padding:1.6rem 2rem;border-left:3px solid var(--clay);background:var(--parch);">
-          <p style="font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;font-weight:400;color:#2e1a0e;line-height:1.7;">"You deserve to feel beautiful not just look it."</p>
+          <!-- Decorative background square offset -->
+          <div style="position:absolute;bottom:-18px;right:-18px;width:85%;height:85%;border-radius:20px;background:var(--clay-pl);z-index:0;"></div>
+
+          <!-- Main image frame — Instagram Reel fills it -->
+          <div style="position:relative;z-index:1;border-radius:20px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 24px 64px rgba(46,31,22,.18);">
+            <iframe
+              src="https://www.instagram.com/reel/DNk5nPXqbue/embed/"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;display:block;"
+              allowfullscreen
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+              scrolling="no"
+            ></iframe>
+          </div>
+
         </div>
       </div>
 
@@ -854,65 +815,206 @@
 <!-- thin line -->
 <div style="height:1px;background:linear-gradient(90deg,transparent,var(--clay-pl),transparent);margin:0 2.5rem;"></div>
 
-<!-- ══════════════ WHY US ══════════════ -->
-<section id="why" style="padding:9rem 0;">
+<!-- ══════════════ WHY CHOOSE TEJ ══════════════ -->
+<section id="why" style="padding:7rem 0;background:var(--parch);">
   <div class="wrap">
+    <div class="why-split" style="display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;">
 
-    <div style="text-align:center;margin-bottom:5rem;">
-      <div class="sr" style="display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1.6rem;">
-        <div style="width:28px;height:1.5px;background:linear-gradient(to right,transparent,var(--clay));border-radius:2px;"></div>
-        <span class="lbl" style="color:var(--clay);">Our Promise</span>
-        <div style="width:28px;height:1.5px;background:linear-gradient(to left,transparent,var(--clay));border-radius:2px;"></div>
-      </div>
-      <h2 class="d-lg sr d1" style="color:var(--espresso);">Why Choose <em class="clay-text" style="font-style:italic;">TEJ?</em></h2>
-    </div>
+      <!-- LEFT: Image Carousel -->
+      <div class="sr-l sr" style="position:relative;">
 
-    <div class="why-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-bottom:3.5rem;">
+        <!-- Carousel track -->
+        <div style="position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:var(--linen);">
+          <div id="why-slides" style="display:flex;height:100%;transition:transform .6s cubic-bezier(.16,1,.3,1);">
 
-      <div class="why-c sr d1 text-center">
-        <div style="width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--clay-pl),var(--rose-pl));display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 1.2rem;">🏆</div>
-        <h3 style="font-size:1.1rem;font-weight:500;color:#1e1208;margin-bottom:.6rem;">People Who Actually Know Hair</h3>
-        <p style="font-size:.9rem;font-weight:400;color:#3d2a1a;line-height:1.72;">Our stylists are trained and experienced especially with natural and African hair textures. No guesswork, no damage.</p>
-      </div>
+            <!-- Slide 1: Stylist working on hair -->
+            <div style="min-width:100%;height:100%;position:relative;flex-shrink:0;">
+              <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=700&h=900&q=90&auto=format&fit=crop&crop=center"
+                alt="Expert hair styling at TEJ Salon" loading="eager" fetchpriority="high"
+                style="width:100%;height:100%;object-fit:cover;display:block;"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=700&h=900&q=80&fit=crop'"/>
+              <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(30,18,8,.35) 0%,transparent 55%);"></div>
+              <div style="position:absolute;bottom:1.5rem;left:1.5rem;padding:.5rem 1rem;border-radius:50px;background:rgba(255,255,255,.18);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.3);">
+                <span style="font-size:.65rem;font-weight:600;color:#fff;letter-spacing:.12em;text-transform:uppercase;">Hair Styling</span>
+              </div>
+            </div>
 
-      <div class="why-c sr d2 text-center">
-        <div style="width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--sage-pl),rgba(122,146,130,.1));display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 1.2rem;">🌿</div>
-        <h3 style="font-size:1.1rem;font-weight:500;color:#1e1208;margin-bottom:.6rem;">Only Good Products on Your Hair</h3>
-        <p style="font-size:.9rem;font-weight:400;color:#3d2a1a;line-height:1.72;">We stock quality products that are kind to your hair and skin nothing harsh, nothing cheap. You'll feel the difference.</p>
-      </div>
+            <!-- Slide 2: Facial / Skincare -->
+            <div style="min-width:100%;height:100%;position:relative;flex-shrink:0;">
+              <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=700&h=900&q=90&auto=format&fit=crop&crop=face"
+                alt="Glowing skincare treatment" loading="lazy"
+                style="width:100%;height:100%;object-fit:cover;display:block;"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1523263685509-57c1d050d19b?w=700&h=900&q=80&fit=crop'"/>
+              <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(30,18,8,.35) 0%,transparent 55%);"></div>
+              <div style="position:absolute;bottom:1.5rem;left:1.5rem;padding:.5rem 1rem;border-radius:50px;background:rgba(255,255,255,.18);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.3);">
+                <span style="font-size:.65rem;font-weight:600;color:#fff;letter-spacing:.12em;text-transform:uppercase;">Facials & Skincare</span>
+              </div>
+            </div>
 
-      <div class="why-c sr d3 text-center">
-        <div style="width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,rgba(196,112,74,.12),rgba(201,144,156,.1));display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 1.2rem;">🕊️</div>
-        <h3 style="font-size:1.1rem;font-weight:500;color:#1e1208;margin-bottom:.6rem;">A Real Break from Lagos</h3>
-        <p style="font-size:.9rem;font-weight:400;color:#3d2a1a;line-height:1.72;">The moment you step in, the noise stops. Clean, calm, and comfortable because you deserve more than a stressful salon experience.</p>
-      </div>
+            <!-- Slide 3: Spa / Massage -->
+            <div style="min-width:100%;height:100%;position:relative;flex-shrink:0;">
+              <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=700&h=900&q=90&auto=format&fit=crop&crop=center"
+                alt="Relaxing spa massage" loading="lazy"
+                style="width:100%;height:100%;object-fit:cover;display:block;"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=700&h=900&q=80&fit=crop'"/>
+              <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(30,18,8,.35) 0%,transparent 55%);"></div>
+              <div style="position:absolute;bottom:1.5rem;left:1.5rem;padding:.5rem 1rem;border-radius:50px;background:rgba(255,255,255,.18);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.3);">
+                <span style="font-size:.65rem;font-weight:600;color:#fff;letter-spacing:.12em;text-transform:uppercase;">Spa & Massage</span>
+              </div>
+            </div>
 
-      <div class="why-c sr d4 text-center">
-        <div style="width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--rose-pl),rgba(201,144,156,.08));display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 1.2rem;">💎</div>
-        <h3 style="font-size:1.1rem;font-weight:500;color:#1e1208;margin-bottom:.6rem;">We Listen Before We Start</h3>
-        <p style="font-size:.9rem;font-weight:400;color:#3d2a1a;line-height:1.72;">Your hair is different. Your skin is different. We take the time to understand what you want and make sure you leave happy.</p>
-      </div>
+            <!-- Slide 4: Nails -->
+            <div style="min-width:100%;height:100%;position:relative;flex-shrink:0;">
+              <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=700&h=900&q=90&auto=format&fit=crop"
+                alt="Nail art and pedicure" loading="lazy"
+                style="width:100%;height:100%;object-fit:cover;display:block;"
+                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=700&h=900&q=80&fit=crop'"/>
+              <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(30,18,8,.35) 0%,transparent 55%);"></div>
+              <div style="position:absolute;bottom:1.5rem;left:1.5rem;padding:.5rem 1rem;border-radius:50px;background:rgba(255,255,255,.18);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.3);">
+                <span style="font-size:.65rem;font-weight:600;color:#fff;letter-spacing:.12em;text-transform:uppercase;">Nails & Pedicure</span>
+              </div>
+            </div>
 
-    </div>
+          </div><!-- end slides -->
 
-    <!-- Testimonial -->
-    <div class="testi sr" style="padding:3.5rem 3rem;position:relative;overflow:hidden;">
-      <div style="position:absolute;top:-60px;right:-60px;width:250px;height:250px;background:radial-gradient(circle,rgba(255,255,255,.45),transparent 65%);border-radius:50%;pointer-events:none;"></div>
-      <div style="position:relative;z-index:1;text-align:center;">
-        <div style="font-family:'Fraunces',serif;font-size:4rem;font-weight:300;color:rgba(196,112,74,.3);line-height:1;margin-bottom:.5rem;">"</div>
-        <blockquote style="font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.1rem,2.5vw,1.6rem);font-weight:300;color:var(--espresso);line-height:1.6;max-width:660px;margin:0 auto;">
-          I've been to so many salons in Lagos but TEJ is different. They actually listen, they take their time, and every time I leave, I feel amazing. It's my go-to spot now.
-        </blockquote>
-        <div style="margin-top:1.8rem;">
-          <div style="width:30px;height:1.5px;background:var(--clay);margin:0 auto .8rem;border-radius:2px;"></div>
-          <span class="lbl" style="color:#3d2a1a;font-size:.62rem;">Adaeze O. Loyal Client</span>
+          <!-- Prev / Next arrows -->
+          <button onclick="whySlide(-1)" aria-label="Previous" style="position:absolute;top:50%;left:1rem;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.2);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.35);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s;z-index:5;" onmouseover="this.style.background='rgba(255,255,255,.4)'" onmouseout="this.style.background='rgba(255,255,255,.2)'">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button onclick="whySlide(1)" aria-label="Next" style="position:absolute;top:50%;right:1rem;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.2);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.35);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s;z-index:5;" onmouseover="this.style.background='rgba(255,255,255,.4)'" onmouseout="this.style.background='rgba(255,255,255,.2)'">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
         </div>
-        <div style="margin-top:.7rem;color:var(--clay);font-size:.9rem;letter-spacing:.15em;">★★★★★</div>
+
+        <!-- Dot indicators -->
+        <div style="display:flex;justify-content:center;gap:.5rem;margin-top:1.2rem;" id="why-dots">
+          <button onclick="whyGoTo(0)" class="wdot wdot-active" aria-label="Slide 1"></button>
+          <button onclick="whyGoTo(1)" class="wdot" aria-label="Slide 2"></button>
+          <button onclick="whyGoTo(2)" class="wdot" aria-label="Slide 3"></button>
+          <button onclick="whyGoTo(3)" class="wdot" aria-label="Slide 4"></button>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: Text content -->
+      <div>
+        <!-- Eyebrow -->
+        <div class="sr" style="display:flex;align-items:center;gap:.8rem;margin-bottom:1.4rem;">
+          <div style="width:20px;height:1.5px;background:var(--clay);border-radius:2px;"></div>
+          <span class="lbl" style="color:var(--clay);">Why choose us</span>
+        </div>
+
+        <!-- Heading -->
+        <h2 class="d-lg sr d1" style="color:var(--espresso);margin-bottom:2.4rem;">
+          Why <em class="clay-text" style="font-style:italic;">TEJ</em> is the right choice for your beauty
+        </h2>
+
+        <!-- Checklist items -->
+        <div style="display:flex;flex-direction:column;gap:1.6rem;">
+
+          <div class="why-item-row sr d2" style="display:flex;align-items:flex-start;gap:1rem;">
+            <div style="width:26px;height:26px;border-radius:50%;background:var(--clay);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem;">
+              <svg width="12" height="12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <span style="font-size:1rem;font-weight:700;color:#1e1208;">Stylists Who Know African Hair &nbsp;</span>
+              <span style="font-size:.95rem;font-weight:400;color:#5a4030;">Trained, experienced, and great with natural textures, braids, and every curl type.</span>
+            </div>
+          </div>
+
+          <div class="why-item-row sr d3" style="display:flex;align-items:flex-start;gap:1rem;">
+            <div style="width:26px;height:26px;border-radius:50%;background:var(--clay);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem;">
+              <svg width="12" height="12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <span style="font-size:1rem;font-weight:700;color:#1e1208;">Only Quality Products &nbsp;</span>
+              <span style="font-size:.95rem;font-weight:400;color:#5a4030;">We use products that are kind to your hair and skin. Nothing harsh, nothing cheap.</span>
+            </div>
+          </div>
+
+          <div class="why-item-row sr d4" style="display:flex;align-items:flex-start;gap:1rem;">
+            <div style="width:26px;height:26px;border-radius:50%;background:var(--clay);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem;">
+              <svg width="12" height="12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <span style="font-size:1rem;font-weight:700;color:#1e1208;">A Calm Space in Busy Lagos &nbsp;</span>
+              <span style="font-size:.95rem;font-weight:400;color:#5a4030;">Step in and breathe. Clean, relaxed, and comfortable at both our Ikeja and Lekki branches.</span>
+            </div>
+          </div>
+
+          <div class="why-item-row sr d5" style="display:flex;align-items:flex-start;gap:1rem;">
+            <div style="width:26px;height:26px;border-radius:50%;background:var(--clay);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem;">
+              <svg width="12" height="12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <span style="font-size:1rem;font-weight:700;color:#1e1208;">We Listen First &nbsp;</span>
+              <span style="font-size:.95rem;font-weight:400;color:#5a4030;">No rushing, no guessing. We take the time to understand what you want and make sure you leave happy.</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Testimonial pull -->
+        <div class="sr d6" style="margin-top:2.5rem;padding:1.4rem 1.8rem;border-left:3px solid var(--clay);background:var(--parch2);border-radius:0 12px 12px 0;">
+          <p style="font-family:'Fraunces',serif;font-style:italic;font-size:1rem;font-weight:300;color:#2e1a0e;line-height:1.65;margin-bottom:.6rem;">
+            "I've been to so many salons in Lagos but TEJ is different. They actually listen, they take their time, and every time I leave, I feel amazing."
+          </p>
+          <span style="font-size:.7rem;font-weight:600;color:var(--clay);letter-spacing:.1em;text-transform:uppercase;">Adaeze O. &nbsp;★★★★★</span>
+        </div>
+
+        <!-- CTA -->
+        <div class="sr d6" style="margin-top:2rem;">
+          <a href="https://wa.me/2349063718357?text=Hello%20TEJ%20Salon%20%26%20Spa%2C%20I%27d%20like%20to%20book%20an%20appointment." class="btn-c" style="display:inline-flex;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Book Your Session
+          </a>
+        </div>
+
       </div>
     </div>
-
   </div>
 </section>
+
+<style>
+  /* Why carousel dots */
+  .wdot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: var(--linen);
+    cursor: pointer;
+    transition: background .3s, width .3s;
+    padding: 0;
+  }
+  .wdot-active {
+    background: var(--clay);
+    width: 24px;
+    border-radius: 4px;
+  }
+</style>
+
+<script>
+  /* Why carousel */
+  let whyCurrent = 0;
+  const whyTotal = 4;
+
+  function whyUpdateSlider() {
+    document.getElementById('why-slides').style.transform = `translateX(-${whyCurrent * 100}%)`;
+    document.querySelectorAll('.wdot').forEach((d, i) => {
+      d.classList.toggle('wdot-active', i === whyCurrent);
+    });
+  }
+  function whySlide(dir) {
+    whyCurrent = (whyCurrent + dir + whyTotal) % whyTotal;
+    whyUpdateSlider();
+  }
+  function whyGoTo(idx) {
+    whyCurrent = idx;
+    whyUpdateSlider();
+  }
+  // Auto-advance every 4s
+  setInterval(() => whySlide(1), 4000);
+</script>
 
 <!-- ══════════════ CTA ══════════════ -->
 <section id="cta" style="padding:9rem 0;position:relative;overflow:hidden;">
@@ -938,7 +1040,7 @@
       Ready for a fresh look or just some well-deserved me-time? Chat with us on WhatsApp and we will sort out a time that works for you.
     </p>
 
-    <div class="sr d3" style="display:inline-flex;flex-direction:column;align-items:center;gap:.6rem;">
+    <div class="sr d3" style="display:inline-flex;flex-direction:column;align-items:center;gap:1.4rem;">
       <!-- Glow ring behind button -->
       <div style="position:relative;display:inline-block;">
         <div class="cta-glow-ring"></div>
@@ -947,7 +1049,7 @@
           Book on WhatsApp
         </a>
       </div>
-      <span class="lbl" style="color:rgba(255,255,255,.65);font-size:.62rem;">Mon – Sat · 8:00 AM – 8:00 PM</span>
+      <span class="lbl" style="color:rgba(255,255,255,.65);font-size:.62rem;margin-top:.6rem;">Tue – Sat: 9am – 7pm &nbsp;·&nbsp; Sun: 1pm – 7pm</span>
     </div>
   </div>
 </section>
@@ -955,79 +1057,92 @@
 <style>@keyframes ringPop{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:1;}50%{transform:translate(-50%,-50%) scale(1.04);opacity:.5;}}</style>
 
 <!-- ══════════════ FOOTER ══════════════ -->
-<footer style="padding:5rem 0 2.5rem;">
+<footer style="padding:5rem 0 2.5rem;background:var(--parch2);border-top:1px solid var(--linen);">
   <div class="wrap">
-    <div class="ft-grid" style="display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:4rem;margin-bottom:4rem;">
 
+    <div class="ft-grid" style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3.5rem;">
+
+      <!-- Brand -->
       <div>
         <div style="font-family:'Italiana',serif;font-size:2rem;color:var(--espresso);">TEJ</div>
         <div class="lbl" style="color:var(--clay);margin-bottom:1rem;font-size:.62rem;">Salon &amp; Spa</div>
-        <p style="font-size:.9rem;font-weight:400;color:#3d2a1a;line-height:1.78;max-width:240px;">Premium beauty, hair &amp; spa services for those who appreciate the finest in Ikeja, Lagos.</p>
-        <!-- Social row -->
-        <div style="display:flex;gap:.8rem;margin-top:1.5rem;">
-          <!-- Instagram -->
-          <a href="#" aria-label="Instagram" style="width:36px;height:36px;border-radius:50%;border:1.5px solid var(--linen);display:flex;align-items:center;justify-content:center;cursor:none;transition:border-color .25s,background .25s,transform .25s;text-decoration:none;color:var(--mink);" onmouseover="this.style.borderColor='var(--clay)';this.style.background='var(--clay-pl)';this.style.color='var(--clay)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--linen)';this.style.background='transparent';this.style.color='var(--mink)';this.style.transform='translateY(0)'">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <circle cx="12" cy="12" r="4"/>
-              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-            </svg>
+        <p style="font-size:.88rem;font-weight:400;color:#3d2a1a;line-height:1.78;max-width:220px;">Premium hair, beauty and spa services across two locations in Lagos.</p>
+        <!-- Hours box -->
+        <div style="margin-top:1.4rem;padding:1rem 1.2rem;background:var(--parch3);border-radius:12px;border:1px solid var(--linen);">
+          <div class="lbl" style="color:#6e5444;font-size:.58rem;margin-bottom:.6rem;">Opening Hours</div>
+          <div style="font-size:.82rem;font-weight:500;color:#1e1208;margin-bottom:.2rem;">Tue – Sat &nbsp; 9am – 7pm</div>
+          <div style="font-size:.82rem;font-weight:500;color:#1e1208;">Sunday &nbsp; 1pm – 7pm</div>
+          <div style="font-size:.75rem;color:#6e5444;margin-top:.35rem;">Closed Mondays</div>
+        </div>
+        <!-- Social icons -->
+        <div style="display:flex;gap:.8rem;margin-top:1.4rem;">
+          <a href="#" aria-label="Instagram" style="width:34px;height:34px;border-radius:50%;border:1.5px solid var(--linen);display:flex;align-items:center;justify-content:center;cursor:none;transition:border-color .25s,background .25s,transform .25s;text-decoration:none;color:var(--mink);" onmouseover="this.style.borderColor='var(--clay)';this.style.background='var(--clay-pl)';this.style.color='var(--clay)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--linen)';this.style.background='transparent';this.style.color='var(--mink)';this.style.transform='translateY(0)'">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
           </a>
-          <!-- Facebook -->
-          <a href="#" aria-label="Facebook" style="width:36px;height:36px;border-radius:50%;border:1.5px solid var(--linen);display:flex;align-items:center;justify-content:center;cursor:none;transition:border-color .25s,background .25s,transform .25s;text-decoration:none;color:var(--mink);" onmouseover="this.style.borderColor='var(--clay)';this.style.background='var(--clay-pl)';this.style.color='var(--clay)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--linen)';this.style.background='transparent';this.style.color='var(--mink)';this.style.transform='translateY(0)'">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-            </svg>
+          <a href="#" aria-label="Facebook" style="width:34px;height:34px;border-radius:50%;border:1.5px solid var(--linen);display:flex;align-items:center;justify-content:center;cursor:none;transition:border-color .25s,background .25s,transform .25s;text-decoration:none;color:var(--mink);" onmouseover="this.style.borderColor='var(--clay)';this.style.background='var(--clay-pl)';this.style.color='var(--clay)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--linen)';this.style.background='transparent';this.style.color='var(--mink)';this.style.transform='translateY(0)'">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           </a>
-          <!-- WhatsApp -->
-          <a href="https://wa.me/2349063718357" aria-label="WhatsApp" style="width:36px;height:36px;border-radius:50%;border:1.5px solid var(--linen);display:flex;align-items:center;justify-content:center;cursor:none;transition:border-color .25s,background .25s,transform .25s;text-decoration:none;color:var(--mink);" onmouseover="this.style.borderColor='var(--clay)';this.style.background='var(--clay-pl)';this.style.color='var(--clay)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--linen)';this.style.background='transparent';this.style.color='var(--mink)';this.style.transform='translateY(0)'">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
+          <a href="https://wa.me/2349063718357?text=Hello%20TEJ%20Salon%20%26%20Spa%2C%20I%27d%20like%20to%20book%20an%20appointment." aria-label="WhatsApp" style="width:34px;height:34px;border-radius:50%;border:1.5px solid var(--linen);display:flex;align-items:center;justify-content:center;cursor:none;transition:border-color .25s,background .25s,transform .25s;text-decoration:none;color:var(--mink);" onmouseover="this.style.borderColor='var(--clay)';this.style.background='var(--clay-pl)';this.style.color='var(--clay)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--linen)';this.style.background='transparent';this.style.color='var(--mink)';this.style.transform='translateY(0)'">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           </a>
-          <!-- TikTok -->
-          <a href="#" aria-label="TikTok" style="width:36px;height:36px;border-radius:50%;border:1.5px solid var(--linen);display:flex;align-items:center;justify-content:center;cursor:none;transition:border-color .25s,background .25s,transform .25s;text-decoration:none;color:var(--mink);" onmouseover="this.style.borderColor='var(--clay)';this.style.background='var(--clay-pl)';this.style.color='var(--clay)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--linen)';this.style.background='transparent';this.style.color='var(--mink)';this.style.transform='translateY(0)'">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/>
-            </svg>
+          <a href="#" aria-label="TikTok" style="width:34px;height:34px;border-radius:50%;border:1.5px solid var(--linen);display:flex;align-items:center;justify-content:center;cursor:none;transition:border-color .25s,background .25s,transform .25s;text-decoration:none;color:var(--mink);" onmouseover="this.style.borderColor='var(--clay)';this.style.background='var(--clay-pl)';this.style.color='var(--clay)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--linen)';this.style.background='transparent';this.style.color='var(--mink)';this.style.transform='translateY(0)'">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
           </a>
         </div>
       </div>
 
+      <!-- Location 1: Allen, Ikeja -->
       <div>
-        <div class="lbl" style="color:#6e5444;margin-bottom:1.2rem;font-size:.62rem;">Location</div>
-        <p style="font-size:.9rem;font-weight:400;color:#3d2a1a;line-height:1.85;">Allen Avenue,<br/>Ikeja, Lagos State,<br/>Nigeria</p>
-        <div style="margin-top:1.4rem;display:flex;align-items:center;gap:.5rem;">
-          <div style="width:7px;height:7px;border-radius:50%;background:var(--sage);"></div>
-          <span style="font-size:.8rem;font-weight:300;color:var(--sage);">Open Today</span>
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:1rem;">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--clay);flex-shrink:0;"></div>
+          <div class="lbl" style="color:var(--clay);font-size:.6rem;">Allen, Ikeja</div>
         </div>
+        <p style="font-size:.9rem;font-weight:500;color:#1e1208;line-height:1.75;margin-bottom:.9rem;">19 Adeleke Street,<br/>Allen, Ikeja,<br/>Lagos</p>
+        <a href="tel:+2349063718357" style="display:flex;align-items:center;gap:.45rem;text-decoration:none;color:#3d2a1a;font-size:.88rem;font-weight:400;margin-bottom:.5rem;transition:color .25s;" onmouseover="this.style.color='var(--clay)'" onmouseout="this.style.color='#3d2a1a'">
+          <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0120 17a2 2 0 01-2 2A16 16 0 012 3z"/></svg>
+          0906 371 8357
+        </a>
+        <a href="https://wa.me/2349063718357?text=Hello%20TEJ%20Salon%20Allen%2C%20I%27d%20like%20to%20book%20an%20appointment." style="display:flex;align-items:center;gap:.45rem;text-decoration:none;color:var(--sage);font-size:.82rem;font-weight:400;transition:color .25s;" onmouseover="this.style.color='var(--clay)'" onmouseout="this.style.color='var(--sage)'">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp this branch
+        </a>
       </div>
 
+      <!-- Location 2: Lekki Phase 1 -->
       <div>
-        <div class="lbl" style="color:#6e5444;margin-bottom:1.2rem;font-size:.62rem;">Get in Touch</div>
-        <a href="tel:+2349063718357" style="display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--espresso);font-size:.92rem;font-weight:400;margin-bottom:.6rem;transition:color .25s;" onmouseover="this.style.color='var(--clay)'" onmouseout="this.style.color='var(--espresso)'">
-          <svg width="13" height="13" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0120 17a2 2 0 01-2 2A16 16 0 012 3z"/></svg>
-          +234 906 371 8357
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:1rem;">
+          <div style="width:8px;height:8px;border-radius:50%;background:var(--rose);flex-shrink:0;"></div>
+          <div class="lbl" style="color:var(--rose);font-size:.6rem;">Lekki Phase 1</div>
+        </div>
+        <p style="font-size:.9rem;font-weight:500;color:#1e1208;line-height:1.75;margin-bottom:.9rem;">8 Iron Bar Street,<br/>Lekki Phase 1,<br/>Lagos</p>
+        <a href="tel:+2348162823932" style="display:flex;align-items:center;gap:.45rem;text-decoration:none;color:#3d2a1a;font-size:.88rem;font-weight:400;margin-bottom:.5rem;transition:color .25s;" onmouseover="this.style.color='var(--clay)'" onmouseout="this.style.color='#3d2a1a'">
+          <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0120 17a2 2 0 01-2 2A16 16 0 012 3z"/></svg>
+          0816 282 3932
         </a>
-        <a href="https://wa.me/2349063718357?text=Hello%20TEJ%20Salon%20%26%20Spa%2C%20I%27d%20like%20to%20book%20an%20appointment." style="display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--sage);font-size:.85rem;font-weight:400;margin-bottom:.85rem;transition:color .25s;" onmouseover="this.style.color='var(--clay)'" onmouseout="this.style.color='var(--sage)'">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          WhatsApp Us
+        <a href="https://wa.me/2348162823932?text=Hello%20TEJ%20Salon%20Lekki%2C%20I%27d%20like%20to%20book%20an%20appointment." style="display:flex;align-items:center;gap:.45rem;text-decoration:none;color:var(--sage);font-size:.82rem;font-weight:400;transition:color .25s;" onmouseover="this.style.color='var(--clay)'" onmouseout="this.style.color='var(--sage)'">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp this branch
         </a>
-        <div class="lbl" style="color:#6e5444;font-size:.62rem;">Mon – Sat: 8:00 AM – 8:00 PM</div>
+      </div>
+
+      <!-- Quick links -->
+      <div>
+        <div class="lbl" style="color:#6e5444;margin-bottom:1.2rem;font-size:.62rem;">Quick Links</div>
+        <div style="display:flex;flex-direction:column;gap:.7rem;">
+          <a href="#about"    class="hov-link">About Us</a>
+          <a href="#services" class="hov-link">Our Services</a>
+          <a href="#why"      class="hov-link">Why TEJ</a>
+          <a href="https://wa.me/2349063718357?text=Hello%20TEJ%20Salon%20%26%20Spa%2C%20I%27d%20like%20to%20book%20an%20appointment." class="hov-link" style="color:var(--clay);">Book Appointment</a>
+        </div>
       </div>
 
     </div>
 
     <!-- Bottom bar -->
-    <div style="height:1px;background:linear-gradient(90deg,transparent,var(--linen),transparent);margin-bottom:2rem;"></div>
-    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
-      <span style="font-size:.78rem;color:#6e5444;font-weight:400;">© 2025 TEJ Salon &amp; Spa. All rights reserved.</span>
-      <div style="display:flex;gap:2rem;">
-        <a href="#about"    class="hov-link">About</a>
-        <a href="#services" class="hov-link">Services</a>
-        <a href="#why"      class="hov-link">Why Us</a>
-        <a href="https://wa.me/2349063718357?text=Hello%20TEJ%20Salon%20%26%20Spa%2C%20I%27d%20like%20to%20book%20an%20appointment." class="hov-link" style="color:var(--clay);">Contact</a>
-      </div>
+    <div style="height:1px;background:linear-gradient(90deg,transparent,var(--linen),transparent);margin-bottom:1.8rem;"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem;">
+      <span style="font-size:.78rem;color:#6e5444;font-weight:400;">© 2025 TEJ Salon &amp; Spa. Two locations, one standard of excellence.</span>
+      <span style="font-size:.78rem;color:#6e5444;">Allen, Ikeja &nbsp;&middot;&nbsp; Lekki Phase 1</span>
     </div>
   </div>
 </footer>
