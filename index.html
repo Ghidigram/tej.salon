@@ -706,15 +706,17 @@
           <!-- Decorative background square offset -->
           <div style="position:absolute;bottom:-18px;right:-18px;width:85%;height:85%;border-radius:24px;background:var(--clay-pl);z-index:0;"></div>
 
-          <!-- Main frame — matches why-carousel aspect ratio and border radius -->
+          <!-- Main frame — Video fills it -->
           <div style="position:relative;z-index:1;border-radius:24px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 24px 64px rgba(46,31,22,.18);">
-            <iframe
-              src="https://www.instagram.com/reel/DNk5nPXqbue/embed/"
-              style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;display:block;"
-              allowfullscreen
-              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
-              scrolling="no"
-            ></iframe>
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"
+            >
+              <source src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/Visit%20our%20lekki%20branch%20at%208%20Iron%20bar%2C%20Lekki%20Phase%201.%20Open%20Tuesday-Saturday%209-30am-7pm%2C%20Sunday%201p.mp4" type="video/mp4"/>
+            </video>
           </div>
 
         </div>
