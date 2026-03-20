@@ -267,8 +267,10 @@
       /* Footer: 2x2 */
       .ft-grid{grid-template-columns:1fr 1fr!important;gap:2rem!important;}
 
-      /* Section padding */
-      #about,#services,#why,#cta{padding:6rem 0!important;}
+      /* Section padding — tighter on tablet */
+      #about,#services,#why,#cta{padding:5rem 0!important;}
+      .svc-header{margin-bottom:3.5rem!important;}
+      #why{padding-top:5rem!important;}
     }
 
     /* ══════════════════════════════════════
@@ -285,7 +287,12 @@
 
       /* Global */
       .wrap{padding:0 1.1rem!important;}
-      #about,#services,#why,#cta{padding:4.5rem 0!important;}
+      #about,#services,#why,#cta{padding:3.5rem 0!important;}
+      /* Tighter internal section spacing on mobile */
+      .svc-header{margin-bottom:2.2rem!important;}
+      #services .svc-grid{gap:1rem!important;}
+      #why .why-split{gap:2rem!important;}
+      #about .ab-grid{gap:2rem!important;}
 
       /* Hero */
       #hero{min-height:100svh;}
@@ -369,13 +376,38 @@
       /* Why book btn full width */
       .why-split .btn-c{width:100%!important;justify-content:center!important;}
 
+      /* Section spacing small mobile */
+      #about,#services,#why,#cta{padding:3rem 0!important;}
+      #hero .hero-text-col{padding:6rem 1rem 3.5rem 1rem!important;}
+
       /* Footer */
-      footer{padding:3rem 0 2rem!important;}
+      footer{padding:2.5rem 0 1.8rem!important;}
 
       /* CTA button full width */
       .btn-cta-main{padding:.9rem 1.4rem!important;}
     }
 
+
+    /* ── MARQUEE ITEMS ── */
+    .mq-item{
+      font-family:'DM Sans',sans-serif;
+      font-size:.82rem;
+      font-weight:500;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.85);
+    }
+    .mq-sep{
+      color:var(--clay-lt);
+      font-size:.55rem;
+      vertical-align:middle;
+    }
+    @media(max-width:768px){
+      .mq-item{font-size:.75rem!important;letter-spacing:.15em!important;}
+    }
+    @media(max-width:480px){
+      .mq-item{font-size:.68rem!important;letter-spacing:.12em!important;}
+    }
     .hov-link{text-decoration:none;color:var(--mink);font-size:.75rem;letter-spacing:.1em;position:relative;transition:color .25s;}
     .hov-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:var(--clay);transition:width .28s;}
     .hov-link:hover{color:var(--clay);}
@@ -517,13 +549,16 @@
 <!-- ══════════════ HERO ══════════════ -->
 <section id="hero" style="min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
 
-  <!-- Fullscreen video background -->
-  <video
-    autoplay muted loop playsinline
-    style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;"
-  >
-    <source src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/Visit%20our%20lekki%20branch%20at%208%20Iron%20bar%2C%20Lekki%20Phase%201.%20Open%20Tuesday-Saturday%209-30am-7pm%2C%20Sunday%201p.mp4" type="video/mp4"/>
-  </video>
+  <!-- Fullscreen background image — TEJ Salon interior -->
+  <div style="position:absolute;inset:0;z-index:0;">
+    <img
+      src="hero-bg.png"
+      alt="TEJ Salon interior"
+      loading="eager"
+      fetchpriority="high"
+      style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;"
+    />
+  </div>
 
   <!-- Dark overlay — increased opacity for better contrast -->
   <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(160deg,rgba(10,5,2,.88) 0%,rgba(10,5,2,.78) 50%,rgba(10,5,2,.90) 100%);"></div>
@@ -597,21 +632,21 @@
   </div>
 
   <!-- Bottom marquee band -->
-  <div style="position:absolute;bottom:0;left:0;right:0;padding:.8rem 0;border-top:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.3);backdrop-filter:blur(8px);z-index:3;">
+  <div style="position:absolute;bottom:0;left:0;right:0;padding:1.1rem 0;border-top:1px solid rgba(255,255,255,.15);background:rgba(0,0,0,.38);backdrop-filter:blur(8px);z-index:3;">
     <div class="mq-track">
       <div class="mq-inner">
-        <span class="lbl" style="color:rgba(255,255,255,.55);font-size:.56rem;">Hair Styling</span><span style="color:var(--clay-lt);font-size:.38rem;">✦</span>
-        <span class="lbl" style="color:rgba(255,255,255,.55);font-size:.56rem;">Facials &amp; Skincare</span><span style="color:var(--clay-lt);font-size:.38rem;">✦</span>
-        <span class="lbl" style="color:rgba(255,255,255,.55);font-size:.56rem;">Spa Massage</span><span style="color:var(--clay-lt);font-size:.38rem;">✦</span>
-        <span class="lbl" style="color:rgba(255,255,255,.55);font-size:.56rem;">Bridal Packages</span><span style="color:var(--clay-lt);font-size:.38rem;">✦</span>
-        <span class="lbl" style="color:rgba(255,255,255,.55);font-size:.56rem;">Nail Treatments</span><span style="color:var(--clay-lt);font-size:.38rem;">✦</span>
-        <span class="lbl" style="color:rgba(255,255,255,.55);font-size:.56rem;">Beauty Consultations</span><span style="color:var(--clay-lt);font-size:.38rem;">✦</span>
-        <span class="lbl" style="color:rgba(255,255,255,.55);font-size:.56rem;">Hair Styling</span><span style="color:var(--clay-lt);font-size:.38rem;">✦</span>
-        <span class="lbl" style="color:rgba(255,255,255,.55);font-size:.56rem;">Facials &amp; Skincare</span><span style="color:var(--clay-lt);font-size:.38rem;">✦</span>
-        <span class="lbl" style="color:rgba(255,255,255,.55);font-size:.56rem;">Spa Massage</span><span style="color:var(--clay-lt);font-size:.38rem;">✦</span>
-        <span class="lbl" style="color:rgba(255,255,255,.55);font-size:.56rem;">Bridal Packages</span><span style="color:var(--clay-lt);font-size:.38rem;">✦</span>
-        <span class="lbl" style="color:rgba(255,255,255,.55);font-size:.56rem;">Nail Treatments</span><span style="color:var(--clay-lt);font-size:.38rem;">✦</span>
-        <span class="lbl" style="color:rgba(255,255,255,.55);font-size:.56rem;">Beauty Consultations</span><span style="color:var(--clay-lt);font-size:.38rem;">✦</span>
+        <span class="mq-item">Hair Styling</span><span class="mq-sep">✦</span>
+        <span class="mq-item">Facials &amp; Skincare</span><span class="mq-sep">✦</span>
+        <span class="mq-item">Spa Massage</span><span class="mq-sep">✦</span>
+        <span class="mq-item">Bridal Packages</span><span class="mq-sep">✦</span>
+        <span class="mq-item">Nail Treatments</span><span class="mq-sep">✦</span>
+        <span class="mq-item">Beauty Consultations</span><span class="mq-sep">✦</span>
+        <span class="mq-item">Hair Styling</span><span class="mq-sep">✦</span>
+        <span class="mq-item">Facials &amp; Skincare</span><span class="mq-sep">✦</span>
+        <span class="mq-item">Spa Massage</span><span class="mq-sep">✦</span>
+        <span class="mq-item">Bridal Packages</span><span class="mq-sep">✦</span>
+        <span class="mq-item">Nail Treatments</span><span class="mq-sep">✦</span>
+        <span class="mq-item">Beauty Consultations</span><span class="mq-sep">✦</span>
       </div>
     </div>
   </div>
@@ -864,8 +899,13 @@
         <div style="display:flex;flex-direction:column;gap:1.6rem;">
 
           <div class="why-item-row sr d2" style="display:flex;align-items:flex-start;gap:1rem;">
-            <div style="width:26px;height:26px;border-radius:50%;background:var(--clay);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem;">
-              <svg width="12" height="12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <div style="width:28px;height:28px;flex-shrink:0;margin-top:.1rem;display:flex;align-items:center;justify-content:center;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Outer diamond -->
+                <path d="M12 2L22 12L12 22L2 12L12 2Z" stroke="var(--clay)" stroke-width="1.2" fill="rgba(196,112,74,.1)"/>
+                <!-- Inner dot -->
+                <circle cx="12" cy="12" r="2" fill="var(--clay)"/>
+              </svg>
             </div>
             <div>
               <span style="font-size:1rem;font-weight:700;color:#1e1208;">Stylists Who Know African Hair &nbsp;</span>
@@ -874,8 +914,13 @@
           </div>
 
           <div class="why-item-row sr d3" style="display:flex;align-items:flex-start;gap:1rem;">
-            <div style="width:26px;height:26px;border-radius:50%;background:var(--clay);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem;">
-              <svg width="12" height="12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <div style="width:28px;height:28px;flex-shrink:0;margin-top:.1rem;display:flex;align-items:center;justify-content:center;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Outer diamond -->
+                <path d="M12 2L22 12L12 22L2 12L12 2Z" stroke="var(--clay)" stroke-width="1.2" fill="rgba(196,112,74,.1)"/>
+                <!-- Inner dot -->
+                <circle cx="12" cy="12" r="2" fill="var(--clay)"/>
+              </svg>
             </div>
             <div>
               <span style="font-size:1rem;font-weight:700;color:#1e1208;">Only Quality Products &nbsp;</span>
@@ -884,8 +929,13 @@
           </div>
 
           <div class="why-item-row sr d4" style="display:flex;align-items:flex-start;gap:1rem;">
-            <div style="width:26px;height:26px;border-radius:50%;background:var(--clay);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem;">
-              <svg width="12" height="12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <div style="width:28px;height:28px;flex-shrink:0;margin-top:.1rem;display:flex;align-items:center;justify-content:center;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Outer diamond -->
+                <path d="M12 2L22 12L12 22L2 12L12 2Z" stroke="var(--clay)" stroke-width="1.2" fill="rgba(196,112,74,.1)"/>
+                <!-- Inner dot -->
+                <circle cx="12" cy="12" r="2" fill="var(--clay)"/>
+              </svg>
             </div>
             <div>
               <span style="font-size:1rem;font-weight:700;color:#1e1208;">A Calm Space in Busy Lagos &nbsp;</span>
@@ -894,8 +944,13 @@
           </div>
 
           <div class="why-item-row sr d5" style="display:flex;align-items:flex-start;gap:1rem;">
-            <div style="width:26px;height:26px;border-radius:50%;background:var(--clay);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem;">
-              <svg width="12" height="12" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <div style="width:28px;height:28px;flex-shrink:0;margin-top:.1rem;display:flex;align-items:center;justify-content:center;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Outer diamond -->
+                <path d="M12 2L22 12L12 22L2 12L12 2Z" stroke="var(--clay)" stroke-width="1.2" fill="rgba(196,112,74,.1)"/>
+                <!-- Inner dot -->
+                <circle cx="12" cy="12" r="2" fill="var(--clay)"/>
+              </svg>
             </div>
             <div>
               <span style="font-size:1rem;font-weight:700;color:#1e1208;">We Listen First &nbsp;</span>
