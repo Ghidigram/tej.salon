@@ -235,9 +235,10 @@
       transition:transform .4s cubic-bezier(.16,1,.3,1);
     }
     .svc-n{
-      font-family:'Playfair Display',serif;
-      font-size:1.55rem;font-weight:400;
-      color:#fff;line-height:1.15;margin-bottom:.7rem;
+      font-family:'Inter',sans-serif;
+      font-size:1.35rem;font-weight:600;
+      color:#fff;line-height:1.2;margin-bottom:.7rem;
+      letter-spacing:-.01em;
     }
     .svc-p{
       font-size:.82rem;font-weight:400;color:rgba(255,255,255,.78);
@@ -341,11 +342,16 @@
        RESPONSIVE — MOBILE (≤768px)
     ══════════════════════════════════════ */
     @media(max-width:768px){
-      /* Nav */
+      /* Nav mobile */
       .nd{display:none!important;}
       #ham{display:flex!important;}
-      #nav{padding:1.2rem 1.25rem!important;}
-      #nav.shrunk{padding:.9rem 1.25rem!important;}
+      #nav{
+        padding:1rem 1.25rem!important;
+        align-items:center!important;
+      }
+      #nav.shrunk{padding:.85rem 1.25rem!important;}
+      .n-logo{font-size:1.6rem!important;}
+      .n-sub{font-size:.5rem!important;letter-spacing:.2em!important;}
       body{cursor:auto;}
       #cur,#cur-r{display:none;}
 
