@@ -305,157 +305,183 @@
        RESPONSIVE — TABLET (≤1024px)
     ══════════════════════════════════════ */
     @media(max-width:1024px){
-      /* Hero */
       #hero{grid-template-columns:1fr!important;}
       .hero-img-col{display:none!important;}
-      .hero-text-col{padding:8rem 3rem 6rem 3rem!important;}
+      .hero-text-col{padding:8rem 3rem 6rem 3rem!important;text-align:center;align-items:center;}
 
-      /* About */
       .ab-grid{grid-template-columns:1fr!important;gap:3rem!important;}
       .ab-grid .srr{width:100%!important;}
 
-      /* Services header left-align on tablet when wrapped */
       .svc-header{gap:1.2rem!important;}
       .svc-sub{text-align:left!important;max-width:100%!important;}
-
-      /* Services */
       .svc-grid{grid-template-columns:1fr 1fr!important;}
       .svc{min-height:380px!important;}
       .svc .svc-p{max-height:100px!important;opacity:1!important;}
       .svc .svc-btn{display:inline-flex!important;}
 
-      /* Why split — stack on tablet, text first then carousel */
       .why-split{grid-template-columns:1fr!important;gap:3.5rem!important;}
       .why-split > div:first-child{max-width:520px;margin:0 auto;width:100%;order:2;}
       .why-split > div:last-child{order:1;}
 
-      /* Footer: 2x2 */
       .ft-grid{grid-template-columns:1fr 1fr!important;gap:2rem!important;}
-
-      /* Section padding — tighter on tablet */
-      #about,#services,#why,#cta{padding:5rem 0!important;}
-      .svc-header{margin-bottom:3.5rem!important;}
-      #why{padding-top:5rem!important;}
+      #about,#services,#why,#cta,#reviews{padding:5rem 0!important;}
     }
 
     /* ══════════════════════════════════════
        RESPONSIVE — MOBILE (≤768px)
     ══════════════════════════════════════ */
     @media(max-width:768px){
-      /* Nav mobile */
-      .nd{display:none!important;}
-      #ham{display:flex!important;}
-      #nav{
-        padding:1rem 1.25rem!important;
-        align-items:center!important;
-      }
-      #nav.shrunk{padding:.85rem 1.25rem!important;}
-      .n-logo{font-size:1.6rem!important;}
-      .n-sub{font-size:.5rem!important;letter-spacing:.2em!important;}
+      /* ── CURSOR ── */
       body{cursor:auto;}
       #cur,#cur-r{display:none;}
 
-      /* Global */
-      .wrap{padding:0 1.1rem!important;}
-      #about,#services,#why,#cta{padding:3.5rem 0!important;}
-      /* Tighter internal section spacing on mobile */
-      .svc-header{margin-bottom:2.2rem!important;}
-      #services .svc-grid{gap:1rem!important;}
-      #why .why-split{gap:2rem!important;}
-      #about .ab-grid{gap:2rem!important;}
+      /* ── NAV ── */
+      .nd{display:none!important;}
+      #ham{display:flex!important;}
+      #nav{padding:.9rem 1.2rem!important;align-items:center!important;}
+      #nav.shrunk{padding:.75rem 1.2rem!important;}
+      .n-logo{font-size:1.5rem!important;line-height:1.1!important;}
+      .n-sub{font-size:.48rem!important;letter-spacing:.18em!important;}
 
-      /* Hero */
+      /* ── GLOBAL ── */
+      .wrap{padding:0 1rem!important;}
+      #about,#services,#why,#cta,#reviews{padding:3rem 0!important;}
+
+      /* ── HERO ── */
       #hero{min-height:100svh;}
-      .hero-text-col{padding:7rem 1.25rem 5rem 1.25rem!important;justify-content:flex-start;}
-      .d-xl{font-size:clamp(2.6rem,11vw,4rem)!important;line-height:.95!important;}
-      #hero p{font-size:.95rem!important;max-width:100%!important;}
-      .hero-text-col > div:last-of-type{display:none!important;}
+      .hero-text-col{
+        padding:6rem 1.2rem 4.5rem!important;
+        text-align:center!important;
+        align-items:center!important;
+        justify-content:center!important;
+      }
+      .d-xl{font-size:clamp(2.6rem,10.5vw,3.6rem)!important;line-height:1.08!important;}
+      .hero-text-col h1{margin-bottom:.15rem!important;}
+      #hero p{font-size:.95rem!important;max-width:100%!important;margin-top:1.2rem!important;line-height:1.8!important;}
+      /* Hero CTAs — full width stacked */
+      #hero .btn-c,#hero .btn-o{
+        width:100%!important;
+        justify-content:center!important;
+        padding:.95rem 1rem!important;
+        font-size:.75rem!important;
+      }
+      /* Hero stats */
+      #hero [style*="gap:2.5rem"]{gap:1.2rem!important;justify-content:center!important;}
+      /* Hide scroll cue on mobile */
+      #hero [style*="Scroll"]{display:none!important;}
 
-      /* Type */
-      .d-lg{font-size:clamp(1.8rem,7vw,2.6rem)!important;}
+      /* ── TYPE ── */
+      .d-lg{font-size:clamp(1.7rem,6.5vw,2.4rem)!important;}
 
-      /* About — reel frame full width, controlled height */
-      .ab-grid{grid-template-columns:1fr!important;gap:2.5rem!important;}
+      /* ── ABOUT ── */
+      .ab-grid{grid-template-columns:1fr!important;gap:2rem!important;}
       .ab-grid .srr{max-width:100%!important;padding:0!important;}
-      /* Reel frame fills column width on mobile */
-      .ab-grid .srr > div{width:100%!important;max-width:100%!important;}
+      .ab-grid .srr > div{width:100%!important;}
+      /* Hide decorative offset square behind reel */
+      .ab-grid .srr > div > div:first-child{display:none!important;}
 
-      /* Services header: stack and left-align on mobile */
-      .svc-header{flex-direction:column!important;align-items:flex-start!important;gap:1rem!important;margin-bottom:3rem!important;}
-      .svc-sub{text-align:left!important;max-width:100%!important;}
+      /* ── SERVICES ── */
+      .svc-header{
+        flex-direction:column!important;
+        align-items:flex-start!important;
+        gap:.8rem!important;
+        margin-bottom:1.8rem!important;
+      }
+      .svc-sub{text-align:left!important;max-width:100%!important;font-size:.9rem!important;}
+      .svc-grid{grid-template-columns:1fr!important;gap:1rem!important;}
+      .svc{min-height:360px!important;}
+      .svc .svc-p{max-height:none!important;opacity:1!important;}
+      .svc .svc-btn{display:inline-flex!important;}
+      .svc .svc-overlay{
+        background:linear-gradient(to top,rgba(10,5,2,.92) 0%,rgba(10,5,2,.5) 55%,rgba(10,5,2,.1) 100%)!important;
+      }
+      .svc-tag{font-size:.58rem!important;}
+      .svc-n{font-size:1.2rem!important;}
+      .svc-p{font-size:.82rem!important;}
 
-      /* Services */
-      .svc-grid{grid-template-columns:1fr!important;}
-      .svc{padding:1.8rem 1.5rem!important;}
-
-      /* Why split — stack on mobile, text first then carousel */
-      .why-split{grid-template-columns:1fr!important;gap:2.5rem!important;}
-      .why-split > div:first-child{max-width:100%!important;margin:0!important;order:2!important;}
+      /* ── WHY SPLIT ── */
+      .why-split{grid-template-columns:1fr!important;gap:2rem!important;}
+      .why-split > div:first-child{order:2!important;max-width:100%!important;margin:0!important;}
       .why-split > div:last-child{order:1!important;}
-      /* Limit carousel height on mobile */
-      .why-split > div:first-child > div:first-child{aspect-ratio:3/4!important;}
-      /* Checklist rows readable on mobile */
-      .why-item-row{gap:.8rem!important;}
-      .why-item-row span:first-of-type{font-size:.92rem!important;}
-      .why-item-row span:last-of-type{font-size:.88rem!important;}
+      .why-split > div:last-child > div:first-child{aspect-ratio:3/4!important;}
+      .why-item-row{gap:.75rem!important;}
+      .why-item-row > div:last-child > span:first-child{font-size:.92rem!important;}
+      .why-item-row > div:last-child > span:last-child{font-size:.87rem!important;}
+      /* WHY: book btn full width */
+      #why .btn-c{width:100%!important;justify-content:center!important;}
+      /* WHY: testimonial */
+      #why [style*="border-left:3px"]{padding:1.2rem 1.2rem!important;}
 
-      /* CTA */
-      #cta .wrap{padding:0 1.25rem!important;}
-      #cta h2{font-size:clamp(1.8rem,7vw,2.6rem)!important;}
-      #cta p{font-size:.95rem!important;}
-      .btn-cta-main{padding:1rem 1.8rem!important;font-size:.72rem!important;width:100%;justify-content:center;}
-      .btn-c{font-size:.68rem!important;padding:.8rem 1.6rem!important;}
-      .btn-o{font-size:.68rem!important;padding:.8rem 1.6rem!important;}
+      /* ── REVIEWS ── */
+      #reviews .wrap > div:first-child{margin-bottom:2rem!important;}
+      .rev-card{width:260px!important;padding:1.4rem 1.5rem!important;}
+      .rev-text{font-size:.9rem!important;}
+      .rev-card::after{font-size:5rem!important;}
 
-      /* Footer */
-      .ft-grid{grid-template-columns:1fr!important;gap:2rem!important;}
+      /* ── CTA ── */
+      #cta{padding:4rem 0!important;min-height:auto!important;}
+      #cta .wrap{padding:0 1.2rem!important;text-align:center;}
+      #cta h2{font-size:clamp(1.7rem,6.5vw,2.4rem)!important;}
+      #cta p{font-size:.92rem!important;max-width:100%!important;}
+      .btn-cta-main{
+        width:100%!important;
+        justify-content:center!important;
+        padding:1rem 1.2rem!important;
+        font-size:.75rem!important;
+      }
 
-      /* Marquee */
+      /* ── FOOTER ── */
+      .ft-grid{grid-template-columns:1fr!important;gap:1.8rem!important;}
+      footer{padding:3rem 0 1.8rem!important;}
+      footer .wrap > div:last-child{
+        flex-direction:column!important;
+        gap:.8rem!important;
+        align-items:flex-start!important;
+      }
+
+      /* ── MISC ── */
       .mq-inner{animation-duration:20s!important;}
-
-      /* Hide decorative elements */
       .fpill.grid-badge{display:none!important;}
-      #cta > div[style*="720px"],#cta > div[style*="520px"]{display:none!important;}
     }
 
     /* ══════════════════════════════════════
        RESPONSIVE — SMALL MOBILE (≤480px)
     ══════════════════════════════════════ */
     @media(max-width:480px){
-      .d-xl{font-size:clamp(2.9rem,12vw,4rem)!important;line-height:1.05!important;}
-      .d-lg{font-size:clamp(1.6rem,7vw,2.2rem)!important;}
-      .hero-text-col{padding:6.5rem 1rem 4rem 1rem!important;}
+      .wrap{padding:0 .9rem!important;}
+      #about,#services,#why,#cta,#reviews{padding:2.5rem 0!important;}
 
-      /* Hero CTAs full width */
-      .hero-text-col [style*="flex-wrap:wrap;gap:1rem;margin-top:2.6rem"]{flex-direction:column!important;gap:.8rem!important;}
-      #hero .btn-c,#hero .btn-o{width:100%!important;justify-content:center!important;padding:1rem 1.5rem!important;font-size:.78rem!important;}
+      /* Nav */
+      #nav{padding:.8rem 1rem!important;}
+      .n-logo{font-size:1.35rem!important;}
 
-      /* Hero stats tighter */
-      .hero-text-col [style*="gap:2.2rem"]{gap:1rem!important;flex-wrap:wrap!important;}
+      /* Hero */
+      .hero-text-col{padding:5.5rem 1rem 4rem!important;}
+      .d-xl{font-size:clamp(2.4rem,10vw,3.2rem)!important;line-height:1.08!important;}
+      .d-lg{font-size:clamp(1.55rem,6vw,2rem)!important;}
+      #hero p{font-size:.9rem!important;}
+
+      /* Stats */
+      #hero [style*="gap:2.5rem"]{gap:.8rem!important;}
+      #hero [style*="font-size:2.6rem"]{font-size:2rem!important;}
 
       /* Services */
-      .svc{padding:1.6rem 1.2rem!important;}
+      .svc{min-height:320px!important;}
       .svc-n{font-size:1.1rem!important;}
+      .svc-p{font-size:.8rem!important;}
 
-      /* Why carousel dots container */
-      #why-dots{gap:.4rem!important;}
+      /* Why */
+      #why-dots{gap:.35rem!important;}
+      #why .btn-c{font-size:.68rem!important;}
 
-      /* Why checklist tighter */
-      .why-item-row{gap:.7rem!important;}
-      .why-split > div:last-child > div:nth-child(3){gap:1.2rem!important;}
+      /* Reviews */
+      .rev-card{width:240px!important;padding:1.2rem 1.2rem!important;}
 
-      /* Why book btn full width */
-      .why-split .btn-c{width:100%!important;justify-content:center!important;}
-
-      /* Section spacing small mobile */
-      #about,#services,#why,#cta{padding:3rem 0!important;}
-      #hero .hero-text-col{padding:6rem 1rem 3.5rem 1rem!important;}
+      /* CTA */
+      .btn-cta-main{font-size:.72rem!important;padding:.9rem 1rem!important;}
 
       /* Footer */
-      footer{padding:2.5rem 0 1.8rem!important;}
-
-      /* CTA button full width */
-      .btn-cta-main{padding:.9rem 1.4rem!important;}
+      footer{padding:2.5rem 0 1.5rem!important;}
     }
 
 
