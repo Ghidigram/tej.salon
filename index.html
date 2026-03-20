@@ -287,11 +287,13 @@
     /* ── MOBILE ── */
     #mob{display:none;position:fixed;inset:0;z-index:499;background:rgba(250,247,242,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;}
     #mob.open{display:flex;}
-    #ham{display:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px;}
-    #ham span{display:block;width:22px;height:1.5px;background:var(--espresso);border-radius:2px;transition:transform .3s,opacity .3s;}
+    #ham{display:none;cursor:pointer;flex-direction:column;gap:5px;padding:6px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border-radius:8px;border:1px solid rgba(255,255,255,.2);transition:background .25s;}
+    #ham span{display:block;width:22px;height:1.5px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s;}
     #ham.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
     #ham.open span:nth-child(2){opacity:0;}
     #ham.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+    #nav.shrunk #ham{background:rgba(46,31,22,.08);border-color:rgba(46,31,22,.15);}
+    #nav.shrunk #ham span{background:var(--espresso);}
 
     @keyframes heroFade{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
     @keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
@@ -321,9 +323,10 @@
       .svc .svc-p{max-height:100px!important;opacity:1!important;}
       .svc .svc-btn{display:inline-flex!important;}
 
-      /* Why split — stack on tablet */
+      /* Why split — stack on tablet, text first then carousel */
       .why-split{grid-template-columns:1fr!important;gap:3.5rem!important;}
-      .why-split > div:first-child{max-width:520px;margin:0 auto;width:100%;}
+      .why-split > div:first-child{max-width:520px;margin:0 auto;width:100%;order:2;}
+      .why-split > div:last-child{order:1;}
 
       /* Footer: 2x2 */
       .ft-grid{grid-template-columns:1fr 1fr!important;gap:2rem!important;}
@@ -379,9 +382,10 @@
       .svc-grid{grid-template-columns:1fr!important;}
       .svc{padding:1.8rem 1.5rem!important;}
 
-      /* Why split — stack, carousel then text */
+      /* Why split — stack on mobile, text first then carousel */
       .why-split{grid-template-columns:1fr!important;gap:2.5rem!important;}
-      .why-split > div:first-child{max-width:100%!important;margin:0!important;}
+      .why-split > div:first-child{max-width:100%!important;margin:0!important;order:2!important;}
+      .why-split > div:last-child{order:1!important;}
       /* Limit carousel height on mobile */
       .why-split > div:first-child > div:first-child{aspect-ratio:3/4!important;}
       /* Checklist rows readable on mobile */
@@ -412,13 +416,13 @@
        RESPONSIVE — SMALL MOBILE (≤480px)
     ══════════════════════════════════════ */
     @media(max-width:480px){
-      .d-xl{font-size:clamp(2.8rem,11vw,3.8rem)!important;}
+      .d-xl{font-size:clamp(2.9rem,12vw,4rem)!important;line-height:1.05!important;}
       .d-lg{font-size:clamp(1.6rem,7vw,2.2rem)!important;}
       .hero-text-col{padding:6.5rem 1rem 4rem 1rem!important;}
 
-      /* Hero CTAs stack vertically */
-      .hero-text-col [style*="flex-wrap:wrap;gap:1rem;margin-top:2.6rem"]{flex-direction:column!important;}
-      #hero .btn-c,#hero .btn-o{width:100%!important;justify-content:center!important;}
+      /* Hero CTAs full width */
+      .hero-text-col [style*="flex-wrap:wrap;gap:1rem;margin-top:2.6rem"]{flex-direction:column!important;gap:.8rem!important;}
+      #hero .btn-c,#hero .btn-o{width:100%!important;justify-content:center!important;padding:1rem 1.5rem!important;font-size:.78rem!important;}
 
       /* Hero stats tighter */
       .hero-text-col [style*="gap:2.2rem"]{gap:1rem!important;flex-wrap:wrap!important;}
@@ -620,10 +624,8 @@
     <img src="hero-bg.png" alt="TEJ Salon" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;"/>
   </video>
 
-  <!-- Dark overlay — increased opacity for better contrast -->
-  <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(160deg,rgba(10,5,2,.88) 0%,rgba(10,5,2,.78) 50%,rgba(10,5,2,.90) 100%);"></div>
-  <!-- Warm bottom fade -->
-  <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(30,12,5,.65) 0%,transparent 55%);"></div>
+  <!-- Flat dark overlay — no gradient -->
+  <div style="position:absolute;inset:0;z-index:1;background:rgba(10,5,2,.72);"></div>
 
   <!-- Centered text content -->
   <div class="hero-text-col" style="position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:9rem 2rem 8rem;width:100%;max-width:900px;margin:0 auto;">
@@ -639,8 +641,8 @@
     <h1 class="d-xl" style="color:#fff;animation:heroFade .9s .25s both;line-height:1.05;">
       You Deserve a
     </h1>
-    <h1 class="d-xl" style="animation:heroFade .9s .42s both;background:linear-gradient(135deg,var(--clay-lt),var(--rose-lt));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.05;">
-      Day at TEJ<sup style="font-size:.28em;vertical-align:super;-webkit-text-fill-color:var(--clay-lt);color:var(--clay-lt);opacity:.75;">✦</sup>
+    <h1 class="d-xl" style="animation:heroFade .9s .42s both;color:var(--clay-lt);line-height:1.05;">
+      Day at TEJ<sup style="font-size:.28em;vertical-align:super;color:var(--clay-lt);opacity:.75;">✦</sup>
     </h1>
 
     <!-- Sub -->
@@ -1048,28 +1050,28 @@
 </section>
 
 <!-- ══════════════ REVIEWS ══════════════ -->
-<section id="reviews" style="padding:6rem 0;background:var(--espresso);overflow:hidden;">
+<section id="reviews" style="padding:6rem 0;background:var(--parch3);overflow:hidden;">
   <div class="wrap">
 
     <!-- Header -->
     <div class="sr" style="text-align:center;margin-bottom:3.5rem;">
       <div style="display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1.2rem;">
-        <div style="width:28px;height:1.5px;background:linear-gradient(to right,transparent,rgba(201,168,76,.6));border-radius:2px;"></div>
-        <span class="lbl" style="color:rgba(201,168,76,.8);">Happy Clients</span>
-        <div style="width:28px;height:1.5px;background:linear-gradient(to left,transparent,rgba(201,168,76,.6));border-radius:2px;"></div>
+        <div style="width:28px;height:1.5px;background:linear-gradient(to right,transparent,var(--clay));border-radius:2px;"></div>
+        <span class="lbl" style="color:var(--clay);">Happy Clients</span>
+        <div style="width:28px;height:1.5px;background:linear-gradient(to left,transparent,var(--clay));border-radius:2px;"></div>
       </div>
-      <h2 class="d-lg sr d1" style="color:#f5efe6;">What Our Clients <em style="font-style:italic;background:linear-gradient(135deg,#e2c97e,#c9a84c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Say</em></h2>
+      <h2 class="d-lg sr d1" style="color:var(--espresso);">What Our Clients <em class="clay-text" style="font-style:italic;">Say</em></h2>
       <div style="display:flex;align-items:center;justify-content:center;gap:.3rem;margin-top:1rem;">
-        <span style="color:#c9a84c;font-size:1.1rem;">★★★★★</span>
-        <span style="font-size:.82rem;font-weight:500;color:rgba(245,239,230,.55);margin-left:.4rem;">5.0 · 200+ reviews</span>
+        <span style="color:var(--clay);font-size:1.1rem;">★★★★★</span>
+        <span style="font-size:.82rem;font-weight:500;color:var(--mink);margin-left:.4rem;">5.0 · 200+ reviews</span>
       </div>
     </div>
 
     <!-- Scrolling review track -->
     <div style="position:relative;">
       <!-- Fade edges -->
-      <div style="position:absolute;left:0;top:0;bottom:0;width:80px;background:linear-gradient(to right,var(--espresso),transparent);z-index:2;pointer-events:none;"></div>
-      <div style="position:absolute;right:0;top:0;bottom:0;width:80px;background:linear-gradient(to left,var(--espresso),transparent);z-index:2;pointer-events:none;"></div>
+      <div style="position:absolute;left:0;top:0;bottom:0;width:80px;background:linear-gradient(to right,var(--parch3),transparent);z-index:2;pointer-events:none;"></div>
+      <div style="position:absolute;right:0;top:0;bottom:0;width:80px;background:linear-gradient(to left,var(--parch3),transparent);z-index:2;pointer-events:none;"></div>
 
       <!-- Row 1 — scrolls left -->
       <div style="overflow:hidden;margin-bottom:1.2rem;">
@@ -1230,24 +1232,25 @@
   /* ── LUXURY REVIEW CARDS ── */
   .rev-card{
     width:320px;flex-shrink:0;
-    background:var(--espresso);
+    background:#fff;
     border-radius:20px;
     padding:2rem 2.2rem;
-    border:1px solid rgba(201,168,76,.18);
+    border:1.5px solid var(--linen);
     position:relative;overflow:hidden;
     cursor:default;
+    box-shadow:0 2px 16px rgba(46,31,22,.06);
     transition:transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s, border-color .4s;
   }
-  /* Shimmer accent top */
+  /* Clay top accent line */
   .rev-card::before{
-    content:'';position:absolute;top:0;left:0;right:0;height:1px;
-    background:linear-gradient(90deg,transparent,rgba(201,168,76,.55),transparent);
+    content:'';position:absolute;top:0;left:0;right:0;height:2px;
+    background:linear-gradient(90deg,transparent,var(--clay),transparent);
     opacity:0;transition:opacity .4s;
   }
   .rev-card:hover{
     transform:translateY(-6px);
-    box-shadow:0 20px 48px rgba(20,10,5,.35);
-    border-color:rgba(201,168,76,.4);
+    box-shadow:0 20px 48px rgba(46,31,22,.12);
+    border-color:rgba(196,112,74,.3);
   }
   .rev-card:hover::before{opacity:1;}
   /* Opening quote mark */
@@ -1255,32 +1258,32 @@
     content:'"';
     font-family:'Playfair Display',serif;
     font-size:7rem;font-weight:300;line-height:1;
-    color:rgba(201,168,76,.08);
+    color:rgba(196,112,74,.07);
     position:absolute;top:-.5rem;right:1rem;
     pointer-events:none;
   }
   .rev-stars{
-    color:#c9a84c;font-size:.78rem;
+    color:var(--clay);font-size:.78rem;
     margin-bottom:1rem;letter-spacing:.1em;
   }
   .rev-text{
     font-family:'Playfair Display',serif;
-    font-size:1.05rem;font-weight:300;font-style:italic;
-    color:rgba(245,239,230,.88);line-height:1.72;
+    font-size:1rem;font-weight:300;font-style:italic;
+    color:#3d2a1a;line-height:1.72;
     margin-bottom:1.3rem;position:relative;z-index:1;
   }
   .rev-author{
     font-family:'Inter',sans-serif;
     font-size:.65rem;font-weight:700;
-    color:rgba(201,168,76,.85);
+    color:var(--espresso);
     letter-spacing:.16em;text-transform:uppercase;
   }
   .rev-tag{
     display:inline-block;margin-left:.6rem;
     font-size:.58rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
     padding:.2rem .6rem;border-radius:50px;
-    background:rgba(201,168,76,.15);color:rgba(201,168,76,.9);
-    border:1px solid rgba(201,168,76,.25);
+    background:var(--clay-pl);color:var(--clay);
+    border:1px solid rgba(196,112,74,.25);
   }
   /* Scroll animations */
   .rev-left{animation:revScrollLeft 50s linear infinite;}
@@ -1354,11 +1357,8 @@
     />
   </div>
 
-  <!-- Dark gradient overlay — bottom heavy so text is readable -->
-  <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(160deg,rgba(20,10,5,.82) 0%,rgba(30,14,8,.75) 50%,rgba(20,10,5,.88) 100%);"></div>
-
-  <!-- Subtle warm tint layer -->
-  <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(50,20,10,.45) 0%,transparent 60%);"></div>
+  <!-- Flat dark overlay — no gradient -->
+  <div style="position:absolute;inset:0;z-index:1;background:rgba(15,8,4,.78);"></div>
 
   <!-- Decorative rings -->
   <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:720px;height:720px;border:1px solid rgba(37,211,102,.07);border-radius:50%;pointer-events:none;animation:ringPop 9s ease-in-out infinite;z-index:2;"></div>
@@ -1372,7 +1372,7 @@
     </div>
 
     <h2 class="d-lg sr d1" style="color:#fff;max-width:680px;margin:0 auto 1.5rem;">
-      Elevate Your Beauty<br/><em style="font-style:italic;background:linear-gradient(135deg,var(--clay-lt),var(--rose-lt));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Experience Today</em>
+      Elevate Your Beauty<br/><em style="font-style:italic;color:var(--clay-lt);">Experience Today</em>
     </h2>
 
     <p class="sr d2" style="font-size:1rem;font-weight:400;color:rgba(255,255,255,.82);max-width:440px;margin:0 auto 3rem;line-height:1.85;">
