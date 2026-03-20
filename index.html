@@ -311,10 +311,13 @@
     #mob.open{display:flex;}
     #ham{display:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px;background:none;border:none;transition:opacity .25s;}
     #ham span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s,background .3s;}
+    #ham.open span{background:var(--espresso)!important;}
     #ham.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
     #ham.open span:nth-child(2){opacity:0;}
     #ham.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
     #nav.shrunk #ham span{background:var(--espresso)!important;}
+    #mob .n-link{color:var(--espresso)!important;font-size:1.1rem!important;letter-spacing:.15em!important;font-weight:500!important;}
+    #mob .btn-c{font-size:.8rem!important;padding:1rem 2.5rem!important;}
 
     @keyframes heroFade{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
     @keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
@@ -648,7 +651,7 @@
     <a href="#about"    class="n-link">About</a>
     <a href="#services" class="n-link">Services</a>
     <a href="#why"      class="n-link">Why Us</a>
-    <a href="https://wa.me/2349063718357?text=Hello%20TEJ%20Salon%20%26%20Spa%2C%20I%27d%20like%20to%20book%20an%20appointment." class="btn-c" style="padding:.65rem 1.6rem;font-size:.68rem;">
+    <a href="#" onclick="openBooking();return false;" class="btn-c" style="padding:.65rem 1.6rem;font-size:.68rem;">
       <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0120 17a2 2 0 01-2 2A16 16 0 012 3z"/></svg>
       Call Now
     </a>
@@ -664,7 +667,7 @@
   <a href="#about"    class="n-link" onclick="toggleMob()">About</a>
   <a href="#services" class="n-link" onclick="toggleMob()">Services</a>
   <a href="#why"      class="n-link" onclick="toggleMob()">Why Us</a>
-  <a href="https://wa.me/2349063718357?text=Hello%20TEJ%20Salon%20%26%20Spa%2C%20I%27d%20like%20to%20book%20an%20appointment." class="btn-c" onclick="toggleMob()">
+  <a href="#" onclick="openBooking();return false;" class="btn-c" onclick="toggleMob()">
     <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0120 17a2 2 0 01-2 2A16 16 0 012 3z"/></svg>
     Call Now
   </a>
@@ -711,7 +714,7 @@
 
     <!-- CTAs -->
     <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.6rem;animation:heroFade .9s .9s both;justify-content:center;">
-      <a href="https://wa.me/2349063718357?text=Hello%20TEJ%20Salon%20%26%20Spa%2C%20I%27d%20like%20to%20book%20an%20appointment." class="btn-c">
+      <a href="#" onclick="openBooking();return false;" class="btn-c">
         <svg width="13" height="13" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0120 17a2 2 0 01-2 2A16 16 0 012 3z"/></svg>
         Book Now
       </a>
@@ -744,32 +747,6 @@
       </div>
     </div>
 
-    <!-- Scroll cue -->
-    <div style="margin-top:3.5rem;display:flex;flex-direction:column;align-items:center;gap:.5rem;animation:heroFade .9s 1.2s both;">
-      <span class="lbl" style="color:rgba(255,255,255,.4);font-size:.55rem;">Scroll</span>
-      <div style="width:1px;height:40px;background:linear-gradient(to bottom,rgba(255,255,255,.5),transparent);animation:scrollPulse 2.4s ease-in-out infinite;"></div>
-    </div>
-
-  </div>
-
-  <!-- Bottom marquee band -->
-  <div style="position:absolute;bottom:0;left:0;right:0;padding:1.1rem 0;border-top:1px solid rgba(255,255,255,.15);background:rgba(0,0,0,.38);backdrop-filter:blur(8px);z-index:3;">
-    <div class="mq-track">
-      <div class="mq-inner">
-        <span class="mq-item">Hair Styling</span><span class="mq-sep">✦</span>
-        <span class="mq-item">Facials &amp; Skincare</span><span class="mq-sep">✦</span>
-        <span class="mq-item">Spa Massage</span><span class="mq-sep">✦</span>
-        <span class="mq-item">Bridal Packages</span><span class="mq-sep">✦</span>
-        <span class="mq-item">Nail Treatments</span><span class="mq-sep">✦</span>
-        <span class="mq-item">Beauty Consultations</span><span class="mq-sep">✦</span>
-        <span class="mq-item">Hair Styling</span><span class="mq-sep">✦</span>
-        <span class="mq-item">Facials &amp; Skincare</span><span class="mq-sep">✦</span>
-        <span class="mq-item">Spa Massage</span><span class="mq-sep">✦</span>
-        <span class="mq-item">Bridal Packages</span><span class="mq-sep">✦</span>
-        <span class="mq-item">Nail Treatments</span><span class="mq-sep">✦</span>
-        <span class="mq-item">Beauty Consultations</span><span class="mq-sep">✦</span>
-      </div>
-    </div>
   </div>
 
 </section>
@@ -797,7 +774,7 @@
           Our team knows their stuff. From natural hair and braids to facials, massages, and everything in between, we use only quality products that are good for your skin and hair and we take the time to do it right.
         </p>
         <div class="sr d4">
-          <a href="https://wa.me/2349063718357?text=Hello%20TEJ%20Salon%20%26%20Spa%2C%20I%27d%20like%20to%20book%20an%20appointment." class="btn-c">
+          <a href="#" onclick="openBooking();return false;" class="btn-c">
             <svg width="13" height="13" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498A1 1 0 0120 17a2 2 0 01-2 2A16 16 0 012 3z"/></svg>
             Book a Session
           </a>
@@ -862,7 +839,7 @@
         <div class="svc-body">
           <h3 class="svc-n">Hair Styling &amp; Treatments</h3>
           <p class="svc-p">Fresh cut, colour, braids, weave or deep conditioning. We handle every hair type with skill and care.</p>
-          <a href="https://wa.me/2349063718357?text=Hello%20TEJ%2C%20I%27d%20like%20to%20book%20a%20hair%20treatment." class="svc-btn">Book Now</a>
+          <a href="#" onclick="openBooking();return false;" class="svc-btn">Book Now</a>
         </div>
       </div>
 
@@ -873,7 +850,7 @@
         <div class="svc-body">
           <h3 class="svc-n">Facials &amp; Skincare</h3>
           <p class="svc-p">Hydration, brightening, anti-aging and acne solutions. You will leave with a real, visible glow.</p>
-          <a href="https://wa.me/2349063718357?text=Hello%20TEJ%2C%20I%27d%20like%20to%20book%20a%20facial." class="svc-btn">Book Now</a>
+          <a href="#" onclick="openBooking();return false;" class="svc-btn">Book Now</a>
         </div>
       </div>
 
@@ -884,7 +861,7 @@
         <div class="svc-body">
           <h3 class="svc-n">Manicure &amp; Pedicure</h3>
           <p class="svc-p">Classic, gel, acrylic. Proper soak, cuticle care, and every detail handled with precision.</p>
-          <a href="https://wa.me/2349063718357?text=Hello%20TEJ%2C%20I%27d%20like%20to%20book%20a%20manicure." class="svc-btn">Book Now</a>
+          <a href="#" onclick="openBooking();return false;" class="svc-btn">Book Now</a>
         </div>
       </div>
 
@@ -895,7 +872,7 @@
         <div class="svc-body">
           <h3 class="svc-n">Spa &amp; Massage Therapy</h3>
           <p class="svc-p">Full-body massages, hot stone, aromatherapy. Walk in stressed. Walk out renewed.</p>
-          <a href="https://wa.me/2349063718357?text=Hello%20TEJ%2C%20I%27d%20like%20to%20book%20a%20spa%20massage." class="svc-btn">Book Now</a>
+          <a href="#" onclick="openBooking();return false;" class="svc-btn">Book Now</a>
         </div>
       </div>
 
@@ -906,7 +883,7 @@
         <div class="svc-body">
           <h3 class="svc-n">Bridal &amp; Event Packages</h3>
           <p class="svc-p">Hair, makeup, nails, skin. Everything for your big day done beautifully and stress-free.</p>
-          <a href="https://wa.me/2349063718357?text=Hello%20TEJ%2C%20I%27d%20like%20to%20enquire%20about%20bridal%20packages." class="svc-btn">Enquire</a>
+          <a href="#" onclick="openBooking();return false;" class="svc-btn">Enquire</a>
         </div>
       </div>
 
@@ -917,7 +894,7 @@
         <div class="svc-body">
           <h3 class="svc-n">Beauty Consultations</h3>
           <p class="svc-p">Sit with our experts and build your personal beauty plan. Tailored to your hair, skin, and lifestyle.</p>
-          <a href="https://wa.me/2349063718357?text=Hello%20TEJ%2C%20I%27d%20like%20to%20book%20a%20beauty%20consultation." class="svc-btn">Book Now</a>
+          <a href="#" onclick="openBooking();return false;" class="svc-btn">Book Now</a>
         </div>
       </div>
 
@@ -933,80 +910,22 @@
   <div class="wrap">
     <div class="why-split" style="display:grid;grid-template-columns:1fr 1fr;align-items:center;">
 
-      <!-- LEFT: Image Carousel -->
+      <!-- LEFT: TEJ Video Frame -->
       <div style="position:relative;">
-
-        <!-- Carousel track -->
-        <div class="why-carousel-track" style="position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:var(--linen);">
-          <div id="why-slides" style="display:flex;height:100%;transition:transform .6s cubic-bezier(.16,1,.3,1);">
-
-            <!-- Slide 1: Stylist working on hair -->
-            <div style="min-width:100%;height:100%;position:relative;flex-shrink:0;">
-              <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=700&h=900&q=90&auto=format&fit=crop&crop=center"
-                alt="Expert hair styling at TEJ Salon" loading="eager" fetchpriority="high"
-                style="width:100%;height:100%;object-fit:cover;display:block;"
-                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=700&h=900&q=80&fit=crop'"/>
-              <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(30,18,8,.35) 0%,transparent 55%);"></div>
-              <div style="position:absolute;bottom:1.5rem;left:1.5rem;padding:.5rem 1rem;border-radius:50px;background:rgba(255,255,255,.18);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.3);">
-                <span style="font-size:.65rem;font-weight:600;color:#fff;letter-spacing:.12em;text-transform:uppercase;">Hair Styling</span>
-              </div>
-            </div>
-
-            <!-- Slide 2: Facial / Skincare -->
-            <div style="min-width:100%;height:100%;position:relative;flex-shrink:0;">
-              <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=700&h=900&q=90&auto=format&fit=crop&crop=face"
-                alt="Glowing skincare treatment" loading="lazy"
-                style="width:100%;height:100%;object-fit:cover;display:block;"
-                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1523263685509-57c1d050d19b?w=700&h=900&q=80&fit=crop'"/>
-              <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(30,18,8,.35) 0%,transparent 55%);"></div>
-              <div style="position:absolute;bottom:1.5rem;left:1.5rem;padding:.5rem 1rem;border-radius:50px;background:rgba(255,255,255,.18);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.3);">
-                <span style="font-size:.65rem;font-weight:600;color:#fff;letter-spacing:.12em;text-transform:uppercase;">Facials & Skincare</span>
-              </div>
-            </div>
-
-            <!-- Slide 3: Spa / Massage -->
-            <div style="min-width:100%;height:100%;position:relative;flex-shrink:0;">
-              <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=700&h=900&q=90&auto=format&fit=crop&crop=center"
-                alt="Relaxing spa massage" loading="lazy"
-                style="width:100%;height:100%;object-fit:cover;display:block;"
-                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=700&h=900&q=80&fit=crop'"/>
-              <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(30,18,8,.35) 0%,transparent 55%);"></div>
-              <div style="position:absolute;bottom:1.5rem;left:1.5rem;padding:.5rem 1rem;border-radius:50px;background:rgba(255,255,255,.18);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.3);">
-                <span style="font-size:.65rem;font-weight:600;color:#fff;letter-spacing:.12em;text-transform:uppercase;">Spa & Massage</span>
-              </div>
-            </div>
-
-            <!-- Slide 4: Nails -->
-            <div style="min-width:100%;height:100%;position:relative;flex-shrink:0;">
-              <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=700&h=900&q=90&auto=format&fit=crop"
-                alt="Nail art and pedicure" loading="lazy"
-                style="width:100%;height:100%;object-fit:cover;display:block;"
-                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=700&h=900&q=80&fit=crop'"/>
-              <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(30,18,8,.35) 0%,transparent 55%);"></div>
-              <div style="position:absolute;bottom:1.5rem;left:1.5rem;padding:.5rem 1rem;border-radius:50px;background:rgba(255,255,255,.18);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.3);">
-                <span style="font-size:.65rem;font-weight:600;color:#fff;letter-spacing:.12em;text-transform:uppercase;">Nails & Pedicure</span>
-              </div>
-            </div>
-
-          </div><!-- end slides -->
-
-          <!-- Prev / Next arrows -->
-          <button onclick="whySlide(-1)" aria-label="Previous" style="position:absolute;top:50%;left:1rem;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.2);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.35);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s;z-index:5;" onmouseover="this.style.background='rgba(255,255,255,.4)'" onmouseout="this.style.background='rgba(255,255,255,.2)'">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
-          </button>
-          <button onclick="whySlide(1)" aria-label="Next" style="position:absolute;top:50%;right:1rem;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.2);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.35);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s;z-index:5;" onmouseover="this.style.background='rgba(255,255,255,.4)'" onmouseout="this.style.background='rgba(255,255,255,.2)'">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
+        <div style="position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:var(--espresso);box-shadow:0 24px 64px rgba(46,31,22,.22);">
+          <video autoplay muted loop playsinline
+            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
+            <source src="tej_video.mp4" type="video/mp4"/>
+          </video>
+          <!-- Subtle bottom vignette -->
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(20,10,5,.45) 0%,transparent 50%);pointer-events:none;"></div>
+          <!-- Badge -->
+          <div style="position:absolute;bottom:1.4rem;left:1.4rem;padding:.5rem 1.1rem;border-radius:50px;background:rgba(255,255,255,.18);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.28);">
+            <span style="font-size:.62rem;font-weight:600;color:#fff;letter-spacing:.14em;text-transform:uppercase;">TEJ Salon &amp; Spa</span>
+          </div>
         </div>
-
-        <!-- Dot indicators -->
-        <div style="display:flex;justify-content:center;gap:.5rem;margin-top:1.2rem;" id="why-dots">
-          <button onclick="whyGoTo(0)" class="wdot wdot-active" aria-label="Slide 1"></button>
-          <button onclick="whyGoTo(1)" class="wdot" aria-label="Slide 2"></button>
-          <button onclick="whyGoTo(2)" class="wdot" aria-label="Slide 3"></button>
-          <button onclick="whyGoTo(3)" class="wdot" aria-label="Slide 4"></button>
-        </div>
-
+        <!-- Decorative offset -->
+        <div style="position:absolute;bottom:-14px;right:-14px;width:82%;height:82%;border-radius:24px;background:var(--clay-pl);z-index:-1;"></div>
       </div>
 
       <!-- RIGHT: Text content -->
@@ -1109,7 +1028,7 @@
 
         <!-- CTA -->
         <div class="sr d6" style="margin-top:2rem;">
-          <a href="https://wa.me/2349063718357?text=Hello%20TEJ%20Salon%20%26%20Spa%2C%20I%27d%20like%20to%20book%20an%20appointment." class="btn-c" style="display:inline-flex;">
+          <a href="#" onclick="openBooking();return false;" class="btn-c" style="display:inline-flex;">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Book Your Session
           </a>
@@ -1151,69 +1070,69 @@
           <!-- Review card macro -->
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"I've been to so many salons in Lagos but TEJ is different. They actually listen, take their time, and every time I leave I feel amazing."</p>
+            <p class="rev-text">"Walking into TEJ feels like the city quiets down. Within minutes, someone is asking what I need — not rushing me. I leave every single time feeling like the best version of myself."</p>
             <div class="rev-author">Adaeze O. <span class="rev-tag">Allen</span></div>
           </div>
 
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"My hair has never looked this good. The stylist understood exactly what I wanted without me having to explain ten times. Absolute professionals."</p>
+            <p class="rev-text">"I described my vision once. Once. They translated it perfectly. My hair left TEJ looking like it had a whole editorial shoot planned for it."</p>
             <div class="rev-author">Chioma B. <span class="rev-tag">Lekki</span></div>
           </div>
 
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"Came in for a facial and left with the most glowing skin. The environment is so peaceful, I honestly didn't want to leave."</p>
+            <p class="rev-text">"The kind of glow you get after a TEJ facial is not something a filter can replicate. I caught my reflection in the Uber home and genuinely smiled."</p>
             <div class="rev-author">Fatima A. <span class="rev-tag">Allen</span></div>
           </div>
 
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"TEJ did my bridal makeup and hair for my traditional wedding. Everyone kept asking who did it. I'll forever be grateful."</p>
+            <p class="rev-text">"On my wedding day, I wanted to look like myself — just elevated. TEJ understood that completely. Every photo from that day tells the story of how well they listened."</p>
             <div class="rev-author">Blessing N. <span class="rev-tag">Lekki</span></div>
           </div>
 
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"The massage was absolutely everything. I walked in tense and walked out like a different person. Booking again next week."</p>
+            <p class="rev-text">"I work long hours. My body knows it. TEJ is the reset button I didn't know I had access to. I book every two weeks now — it's not a luxury anymore, it's maintenance."</p>
             <div class="rev-author">Kemi S. <span class="rev-tag">Allen</span></div>
           </div>
 
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"My nails have never lasted this long. Three weeks later and they still look freshly done. Worth every naira."</p>
+            <p class="rev-text">"Three weeks post-appointment, someone asked me if I'd just gotten my nails done. That's TEJ for you — details that outlast the moment."</p>
             <div class="rev-author">Tolu M. <span class="rev-tag">Lekki</span></div>
           </div>
 
           <!-- Duplicate for seamless loop -->
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"I've been to so many salons in Lagos but TEJ is different. They actually listen, take their time, and every time I leave I feel amazing."</p>
+            <p class="rev-text">"Walking into TEJ feels like the city quiets down. Within minutes, someone is asking what I need — not rushing me. I leave every single time feeling like the best version of myself."</p>
             <div class="rev-author">Adaeze O. <span class="rev-tag">Allen</span></div>
           </div>
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"My hair has never looked this good. The stylist understood exactly what I wanted without me having to explain ten times. Absolute professionals."</p>
+            <p class="rev-text">"I described my vision once. Once. They translated it perfectly. My hair left TEJ looking like it had a whole editorial shoot planned for it."</p>
             <div class="rev-author">Chioma B. <span class="rev-tag">Lekki</span></div>
           </div>
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"Came in for a facial and left with the most glowing skin. The environment is so peaceful, I honestly didn't want to leave."</p>
+            <p class="rev-text">"The kind of glow you get after a TEJ facial is not something a filter can replicate. I caught my reflection in the Uber home and genuinely smiled."</p>
             <div class="rev-author">Fatima A. <span class="rev-tag">Allen</span></div>
           </div>
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"TEJ did my bridal makeup and hair for my traditional wedding. Everyone kept asking who did it. I'll forever be grateful."</p>
+            <p class="rev-text">"On my wedding day, I wanted to look like myself — just elevated. TEJ understood that completely. Every photo from that day tells the story of how well they listened."</p>
             <div class="rev-author">Blessing N. <span class="rev-tag">Lekki</span></div>
           </div>
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"The massage was absolutely everything. I walked in tense and walked out like a different person. Booking again next week."</p>
+            <p class="rev-text">"I work long hours. My body knows it. TEJ is the reset button I didn't know I had access to. I book every two weeks now — it's not a luxury anymore, it's maintenance."</p>
             <div class="rev-author">Kemi S. <span class="rev-tag">Allen</span></div>
           </div>
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"My nails have never lasted this long. Three weeks later and they still look freshly done. Worth every naira."</p>
+            <p class="rev-text">"Three weeks post-appointment, someone asked me if I'd just gotten my nails done. That's TEJ for you — details that outlast the moment."</p>
             <div class="rev-author">Tolu M. <span class="rev-tag">Lekki</span></div>
           </div>
 
@@ -1226,69 +1145,69 @@
 
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"The ambience is absolutely stunning. You feel like royalty the moment you walk in. TEJ is not just a salon, it's an experience."</p>
+            <p class="rev-text">"TEJ doesn't just do your hair. It holds space for you. The moment you walk in, something in your shoulders drops. That's rare in Lagos."</p>
             <div class="rev-author">Ngozi K. <span class="rev-tag">Allen</span></div>
           </div>
 
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"I got a deep conditioning treatment and my natural hair has never been this soft and defined. The products they use are top quality."</p>
+            <p class="rev-text">"My natural hair has been through a lot. TEJ treated it like it was precious — because apparently, it is. Softest it's been in years, and I've finally stopped hiding it."</p>
             <div class="rev-author">Amara D. <span class="rev-tag">Lekki</span></div>
           </div>
 
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"Brought my daughter for her first professional hair treatment. The team was so patient and gentle with her. We both loved it."</p>
+            <p class="rev-text">"I brought my daughter for her first real salon experience. I was anxious. They were so gentle, so warm. She fell asleep in the chair. That told me everything."</p>
             <div class="rev-author">Sandra E. <span class="rev-tag">Allen</span></div>
           </div>
 
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"I travel from the Island just to visit the Allen branch. The consistency is unmatched. Same great result every single time."</p>
+            <p class="rev-text">"I've tried closer salons. I keep coming back to TEJ Allen. There's a comfort in knowing exactly what you're going to get — and it always exceeds what I remembered."</p>
             <div class="rev-author">Ify T. <span class="rev-tag">Allen</span></div>
           </div>
 
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"Booked via WhatsApp and was attended to within minutes. The Lekki branch is beautifully done. Clean, modern, and welcoming."</p>
+            <p class="rev-text">"I sent a WhatsApp at 9am, had a confirmed appointment by 9:04. The Lekki branch itself is stunning — the kind of space that makes you sit up a little straighter."</p>
             <div class="rev-author">Zainab H. <span class="rev-tag">Lekki</span></div>
           </div>
 
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"My go-to place whenever I need to feel like myself again. They never rush you and the results always speak for themselves."</p>
+            <p class="rev-text">"There's a version of me that exists only after a TEJ appointment. Rested. Refreshed. Remembered. I go back every time I need to find her again."</p>
             <div class="rev-author">Yetunde F. <span class="rev-tag">Allen</span></div>
           </div>
 
           <!-- Duplicate row 2 -->
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"The ambience is absolutely stunning. You feel like royalty the moment you walk in. TEJ is not just a salon, it's an experience."</p>
+            <p class="rev-text">"TEJ doesn't just do your hair. It holds space for you. The moment you walk in, something in your shoulders drops. That's rare in Lagos."</p>
             <div class="rev-author">Ngozi K. <span class="rev-tag">Allen</span></div>
           </div>
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"I got a deep conditioning treatment and my natural hair has never been this soft and defined. The products they use are top quality."</p>
+            <p class="rev-text">"My natural hair has been through a lot. TEJ treated it like it was precious — because apparently, it is. Softest it's been in years, and I've finally stopped hiding it."</p>
             <div class="rev-author">Amara D. <span class="rev-tag">Lekki</span></div>
           </div>
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"Brought my daughter for her first professional hair treatment. The team was so patient and gentle with her. We both loved it."</p>
+            <p class="rev-text">"I brought my daughter for her first real salon experience. I was anxious. They were so gentle, so warm. She fell asleep in the chair. That told me everything."</p>
             <div class="rev-author">Sandra E. <span class="rev-tag">Allen</span></div>
           </div>
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"I travel from the Island just to visit the Allen branch. The consistency is unmatched. Same great result every single time."</p>
+            <p class="rev-text">"I've tried closer salons. I keep coming back to TEJ Allen. There's a comfort in knowing exactly what you're going to get — and it always exceeds what I remembered."</p>
             <div class="rev-author">Ify T. <span class="rev-tag">Allen</span></div>
           </div>
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"Booked via WhatsApp and was attended to within minutes. The Lekki branch is beautifully done. Clean, modern, and welcoming."</p>
+            <p class="rev-text">"I sent a WhatsApp at 9am, had a confirmed appointment by 9:04. The Lekki branch itself is stunning — the kind of space that makes you sit up a little straighter."</p>
             <div class="rev-author">Zainab H. <span class="rev-tag">Lekki</span></div>
           </div>
           <div class="rev-card">
             <div class="rev-stars">★★★★★</div>
-            <p class="rev-text">"My go-to place whenever I need to feel like myself again. They never rush you and the results always speak for themselves."</p>
+            <p class="rev-text">"There's a version of me that exists only after a TEJ appointment. Rested. Refreshed. Remembered. I go back every time I need to find her again."</p>
             <div class="rev-author">Yetunde F. <span class="rev-tag">Allen</span></div>
           </div>
 
@@ -1374,46 +1293,9 @@
   }
 </style>
 
-<style>
-  /* Why carousel dots */
-  .wdot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    border: none;
-    background: var(--linen);
-    cursor: pointer;
-    transition: background .3s, width .3s;
-    padding: 0;
-  }
-  .wdot-active {
-    background: var(--clay);
-    width: 24px;
-    border-radius: 4px;
-  }
-</style>
 
-<script>
-  /* Why carousel */
-  let whyCurrent = 0;
-  const whyTotal = 4;
 
-  function whyUpdateSlider() {
-    document.getElementById('why-slides').style.transform = `translateX(-${whyCurrent * 100}%)`;
-    document.querySelectorAll('.wdot').forEach((d, i) => {
-      d.classList.toggle('wdot-active', i === whyCurrent);
-    });
-  }
-  function whySlide(dir) {
-    whyCurrent = (whyCurrent + dir + whyTotal) % whyTotal;
-    whyUpdateSlider();
-  }
-  function whyGoTo(idx) {
-    whyCurrent = idx;
-    whyUpdateSlider();
-  }
-  // Auto-advance every 4s
-  setInterval(() => whySlide(1), 4000);
-</script>
+
 
 <!-- ══════════════ CTA ══════════════ -->
 <section id="cta" style="padding:9rem 0;position:relative;overflow:hidden;min-height:580px;">
@@ -1454,7 +1336,7 @@
       <!-- Glow ring behind button -->
       <div style="position:relative;display:inline-block;">
         <div class="cta-glow-ring"></div>
-        <a href="https://wa.me/2349063718357?text=Hello%20TEJ%20Salon%20%26%20Spa%2C%20I%27d%20like%20to%20book%20an%20appointment." class="btn-cta-main">
+        <a href="#" onclick="openBooking();return false;" class="btn-cta-main">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Book on WhatsApp
         </a>
@@ -1616,6 +1498,91 @@
     document.getElementById('mob').classList.toggle('open');
     document.getElementById('ham').classList.toggle('open');
   }
+</script>
+
+<!-- ══════════════ BOOKING MODAL ══════════════ -->
+<div id="booking-modal" style="display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;padding:1.5rem;">
+
+  <!-- Backdrop -->
+  <div id="modal-backdrop" onclick="closeBooking()" style="position:absolute;inset:0;background:rgba(10,5,2,.75);backdrop-filter:blur(6px);"></div>
+
+  <!-- Card -->
+  <div style="position:relative;z-index:1;background:#fff;border-radius:28px;padding:2.8rem 2.4rem 2.4rem;max-width:440px;width:100%;box-shadow:0 32px 80px rgba(20,10,5,.3);animation:modalPop .35s cubic-bezier(.16,1,.3,1) both;">
+
+    <!-- Close -->
+    <button onclick="closeBooking()" style="position:absolute;top:1.2rem;right:1.2rem;width:32px;height:32px;border-radius:50%;border:1.5px solid var(--linen);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#6e5444;font-size:1.1rem;transition:background .2s;" onmouseover="this.style.background='var(--linen)'" onmouseout="this.style.background='transparent'">&times;</button>
+
+    <!-- Header -->
+    <div style="text-align:center;margin-bottom:2rem;">
+      <div style="font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--espresso);line-height:1.1;margin-bottom:.5rem;">Book Your Session</div>
+      <p style="font-size:.88rem;color:#6e5444;line-height:1.6;">Which TEJ location would you like to visit?</p>
+    </div>
+
+    <!-- Location cards -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;">
+
+      <!-- Allen / Ikeja -->
+      <a href="https://wa.me/2349063718357?text=Hello%20TEJ%20Salon%20%26%20Spa%20Allen%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" onclick="closeBooking()" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.65rem;padding:1.6rem 1rem;border-radius:18px;border:1.5px solid var(--linen);background:var(--parch);transition:border-color .25s,background .25s,transform .25s;cursor:pointer;" onmouseover="this.style.borderColor='var(--clay)';this.style.background='var(--clay-pl)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--linen)';this.style.background='var(--parch)';this.style.transform='translateY(0)'">
+        <div style="width:46px;height:46px;border-radius:50%;background:var(--clay-pl);display:flex;align-items:center;justify-content:center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--clay)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;color:var(--espresso);line-height:1.2;">Allen</div>
+          <div style="font-size:.68rem;color:#6e5444;margin-top:.2rem;font-weight:500;">Ikeja, Lagos</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:.35rem;font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--clay);">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </div>
+      </a>
+
+      <!-- Lekki -->
+      <a href="https://wa.me/2348162823932?text=Hello%20TEJ%20Salon%20%26%20Spa%20Lekki%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" onclick="closeBooking()" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.65rem;padding:1.6rem 1rem;border-radius:18px;border:1.5px solid var(--linen);background:var(--parch);transition:border-color .25s,background .25s,transform .25s;cursor:pointer;" onmouseover="this.style.borderColor='var(--clay)';this.style.background='var(--clay-pl)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--linen)';this.style.background='var(--parch)';this.style.transform='translateY(0)'">
+        <div style="width:46px;height:46px;border-radius:50%;background:var(--clay-pl);display:flex;align-items:center;justify-content:center;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--clay)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:500;color:var(--espresso);line-height:1.2;">Lekki</div>
+          <div style="font-size:.68rem;color:#6e5444;margin-top:.2rem;font-weight:500;">Phase 1, Lagos</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:.35rem;font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--clay);">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Hours reminder -->
+    <div style="text-align:center;padding:.9rem;background:var(--parch2);border-radius:12px;border:1px solid var(--linen);">
+      <span style="font-size:.72rem;color:#6e5444;font-weight:500;">Tue – Sat 9am–7pm &nbsp;·&nbsp; Sunday 1pm–7pm &nbsp;·&nbsp; Closed Mondays</span>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  @keyframes modalPop{from{opacity:0;transform:scale(.92) translateY(16px);}to{opacity:1;transform:scale(1) translateY(0);}}
+  #booking-modal.active{display:flex!important;}
+  @media(max-width:480px){
+    #booking-modal > div:last-child{padding:2rem 1.4rem 1.6rem!important;border-radius:22px!important;}
+    #booking-modal [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr 1fr!important;gap:.7rem!important;}
+  }
+</style>
+
+<script>
+  function openBooking(){
+    const m = document.getElementById('booking-modal');
+    m.style.display='flex';
+    requestAnimationFrame(()=>m.classList.add('active'));
+    document.body.style.overflow='hidden';
+  }
+  function closeBooking(){
+    const m = document.getElementById('booking-modal');
+    m.classList.remove('active');
+    setTimeout(()=>{m.style.display='none';document.body.style.overflow='';},200);
+  }
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeBooking();});
 </script>
 </body>
 </html>
