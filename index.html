@@ -97,6 +97,11 @@
     /* ── LAYOUT ── */
     .wrap{max-width:1220px;margin:0 auto;padding:0 2.5rem;}
 
+
+    /* ── PAGE SECTION BASE ── */
+    .page-section{padding:9rem 0;}
+    .svc-header{margin-bottom:5rem;}
+    .why-split{gap:6rem;}
     /* ── DIVIDER ── */
     .clay-bar{width:40px;height:2px;background:linear-gradient(90deg,var(--clay),var(--rose));border-radius:2px;}
 
@@ -288,13 +293,12 @@
     /* ── MOBILE ── */
     #mob{display:none;position:fixed;inset:0;z-index:499;background:rgba(250,247,242,.97);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;}
     #mob.open{display:flex;}
-    #ham{display:none;cursor:pointer;flex-direction:column;gap:5px;padding:6px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border-radius:8px;border:1px solid rgba(255,255,255,.2);transition:background .25s;}
-    #ham span{display:block;width:22px;height:1.5px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s;}
+    #ham{display:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px;background:none;border:none;transition:opacity .25s;}
+    #ham span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s,background .3s;}
     #ham.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
     #ham.open span:nth-child(2){opacity:0;}
     #ham.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
-    #nav.shrunk #ham{background:rgba(46,31,22,.08);border-color:rgba(46,31,22,.15);}
-    #nav.shrunk #ham span{background:var(--espresso);}
+    #nav.shrunk #ham span{background:var(--espresso)!important;}
 
     @keyframes heroFade{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
     @keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
@@ -324,7 +328,9 @@
       .why-split > div:last-child{order:1;}
 
       .ft-grid{grid-template-columns:1fr 1fr!important;gap:2rem!important;}
-      #about,#services,#why,#cta,#reviews{padding:5rem 0!important;}
+      /* Section padding */
+      .page-section{padding:5rem 0!important;}
+      #about,#reviews,#cta{padding:5rem 0!important;}
     }
 
     /* ══════════════════════════════════════
@@ -337,7 +343,7 @@
 
       /* ── NAV ── */
       .nd{display:none!important;}
-      #ham{display:flex!important;}
+      #ham{display:flex!important;background:none!important;border:none!important;}
       #nav{padding:.9rem 1.2rem!important;align-items:center!important;}
       #nav.shrunk{padding:.75rem 1.2rem!important;}
       .n-logo{font-size:1.5rem!important;line-height:1.1!important;}
@@ -345,7 +351,10 @@
 
       /* ── GLOBAL ── */
       .wrap{padding:0 1rem!important;}
-      #about,#services,#why,#cta,#reviews{padding:3rem 0!important;}
+      .page-section{padding:2.5rem 0!important;}
+      #about,#reviews,#cta{padding:2.5rem 0!important;}
+      .svc-header{margin-bottom:1.5rem!important;}
+      .why-split{gap:1.5rem!important;}
 
       /* ── HERO ── */
       #hero{min-height:100svh;}
@@ -390,8 +399,6 @@
       .svc-sub{text-align:left!important;max-width:100%!important;font-size:.9rem!important;}
       .svc-grid{grid-template-columns:1fr!important;gap:1rem!important;}
       /* Kill the inline section padding too */
-      section#services{padding:2.5rem 0!important;}
-      section#why{padding:2.5rem 0!important;}
       .svc{min-height:360px!important;}
       .svc .svc-p{max-height:none!important;opacity:1!important;}
       .svc .svc-btn{display:inline-flex!important;}
@@ -452,7 +459,8 @@
     ══════════════════════════════════════ */
     @media(max-width:480px){
       .wrap{padding:0 .9rem!important;}
-      #about,#services,#why,#cta,#reviews{padding:2.5rem 0!important;}
+      .page-section{padding:2rem 0!important;}
+      #about,#reviews,#cta{padding:2rem 0!important;}
 
       /* Nav */
       #nav{padding:.8rem 1rem!important;}
@@ -811,11 +819,11 @@
 <div style="height:1px;background:linear-gradient(90deg,transparent,var(--clay-pl),transparent);margin:0 2.5rem;"></div>
 
 <!-- ══════════════ SERVICES ══════════════ -->
-<section id="services" style="padding:9rem 0;background:var(--parch);">
+<section id="services" class="page-section" style="background:var(--parch);">
   <div class="wrap">
 
     <!-- Header -->
-    <div class="svc-header" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:2rem;margin-bottom:5rem;">
+    <div class="svc-header" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:2rem;">
       <div>
         <div class="sr" style="display:flex;align-items:center;gap:.9rem;margin-bottom:1.6rem;">
           <div class="clay-bar"></div>
@@ -905,9 +913,9 @@
 <div style="height:1px;background:linear-gradient(90deg,transparent,var(--clay-pl),transparent);margin:0 2.5rem;"></div>
 
 <!-- ══════════════ WHY CHOOSE TEJ ══════════════ -->
-<section id="why" style="padding:7rem 0;background:var(--parch);">
+<section id="why" class="page-section" style="background:var(--parch);">
   <div class="wrap">
-    <div class="why-split" style="display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;">
+    <div class="why-split" style="display:grid;grid-template-columns:1fr 1fr;align-items:center;">
 
       <!-- LEFT: Image Carousel -->
       <div class="sr-l sr" style="position:relative;">
