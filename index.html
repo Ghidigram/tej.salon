@@ -549,16 +549,15 @@
 <!-- ══════════════ HERO ══════════════ -->
 <section id="hero" style="min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
 
-  <!-- Fullscreen background image — TEJ Salon interior -->
-  <div style="position:absolute;inset:0;z-index:0;">
-    <img
-      src="hero-bg.png"
-      alt="TEJ Salon interior"
-      loading="eager"
-      fetchpriority="high"
-      style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;"
-    />
-  </div>
+  <!-- Fullscreen video background — 0318 -->
+  <video
+    autoplay muted loop playsinline
+    style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0;"
+  >
+    <source src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/0318.mp4" type="video/mp4"/>
+    <!-- fallback static image if video fails -->
+    <img src="hero-bg.png" alt="TEJ Salon" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;"/>
+  </video>
 
   <!-- Dark overlay — increased opacity for better contrast -->
   <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(160deg,rgba(10,5,2,.88) 0%,rgba(10,5,2,.78) 50%,rgba(10,5,2,.90) 100%);"></div>
@@ -735,7 +734,14 @@
     <div class="svc-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.4rem;">
 
       <div class="svc sr d1">
-        <div class="svc-icon" style="background:linear-gradient(135deg,var(--clay-pl),rgba(196,112,74,.08));">💇</div>
+        <div class="svc-icon" style="background:linear-gradient(135deg,var(--clay-pl),rgba(196,112,74,.08));">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--clay)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
+            <line x1="20" y1="4" x2="8.12" y2="15.88"/>
+            <line x1="14.47" y1="14.48" x2="20" y2="20"/>
+            <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+          </svg>
+        </div>
         <h3 class="svc-n">Hair Styling &amp; Treatments</h3>
         <p class="svc-p">Whether it's a fresh cut, a new colour, braids, weave, or a deep conditioning treatment, we handle every hair type with skill and care.</p>
         <div class="svc-arr">
@@ -745,7 +751,12 @@
       </div>
 
       <div class="svc sr d2">
-        <div class="svc-icon" style="background:linear-gradient(135deg,var(--rose-pl),rgba(201,144,156,.08));">🧖</div>
+        <div class="svc-icon" style="background:linear-gradient(135deg,var(--rose-pl),rgba(201,144,156,.08));">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/>
+            <path d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+          </svg>
+        </div>
         <h3 class="svc-n">Facials &amp; Skincare</h3>
         <p class="svc-p">Give your skin some real attention. Our facials address dryness, uneven tone, breakouts, and dullness. You will leave glowing.</p>
         <div class="svc-arr">
@@ -755,7 +766,11 @@
       </div>
 
       <div class="svc sr d3">
-        <div class="svc-icon" style="background:linear-gradient(135deg,var(--sage-pl),rgba(122,146,130,.08));">💅</div>
+        <div class="svc-icon" style="background:linear-gradient(135deg,var(--sage-pl),rgba(122,146,130,.08));">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+          </svg>
+        </div>
         <h3 class="svc-n">Manicure &amp; Pedicure</h3>
         <p class="svc-p">Beautiful nails from start to finish. Classic polish, gel, acrylics. All done with a proper soak, cuticle care, and attention to every detail.</p>
         <div class="svc-arr">
@@ -765,7 +780,14 @@
       </div>
 
       <div class="svc sr d4">
-        <div class="svc-icon" style="background:linear-gradient(135deg,rgba(196,112,74,.12),rgba(201,144,156,.1));">🧘</div>
+        <div class="svc-icon" style="background:linear-gradient(135deg,rgba(196,112,74,.12),rgba(201,144,156,.1));">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--clay)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22V12"/>
+            <path d="M12 12C12 12 8 8 4 9c0 4 3.5 7 8 7"/>
+            <path d="M12 12c0 0 4-4 8-3c0 4-3.5 7-8 7"/>
+            <path d="M12 12c0 0-2-5 0-9c2 4 0 9 0 9z"/>
+          </svg>
+        </div>
         <h3 class="svc-n">Spa &amp; Massage Therapy</h3>
         <p class="svc-p">Tired body? Stressed out? Our massage and spa treatments are designed to melt tension, ease sore muscles, and help you properly switch off.</p>
         <div class="svc-arr">
@@ -775,7 +797,12 @@
       </div>
 
       <div class="svc sr d5">
-        <div class="svc-icon" style="background:linear-gradient(135deg,var(--rose-pl),var(--clay-pl));">👰</div>
+        <div class="svc-icon" style="background:linear-gradient(135deg,var(--rose-pl),var(--clay-pl));">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--rose)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 4l3 12h14l3-12-6 7-4-7-4 7z"/>
+            <rect x="4" y="17" width="16" height="3" rx="1"/>
+          </svg>
+        </div>
         <h3 class="svc-n">Bridal &amp; Event Packages</h3>
         <p class="svc-p">Getting married or attending a special event? We'll make sure you look stunning from head to toe. Hair, makeup, nails, skin. The full works, done beautifully.</p>
         <div class="svc-arr">
@@ -785,7 +812,12 @@
       </div>
 
       <div class="svc sr d6">
-        <div class="svc-icon" style="background:linear-gradient(135deg,rgba(122,146,130,.12),var(--sage-pl));">🪞</div>
+        <div class="svc-icon" style="background:linear-gradient(135deg,rgba(122,146,130,.12),var(--sage-pl));">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="16" rx="7"/>
+            <path d="M12 18v4"/><path d="M9 22h6"/>
+          </svg>
+        </div>
         <h3 class="svc-n">Beauty Consultations</h3>
         <p class="svc-p">Not sure where to start? Sit down with one of our experts and we'll figure out what works best for your hair, skin, and personal style.</p>
         <div class="svc-arr">
