@@ -385,10 +385,13 @@
         flex-direction:column!important;
         align-items:flex-start!important;
         gap:.8rem!important;
-        margin-bottom:1.8rem!important;
+        margin-bottom:1.5rem!important;
       }
       .svc-sub{text-align:left!important;max-width:100%!important;font-size:.9rem!important;}
       .svc-grid{grid-template-columns:1fr!important;gap:1rem!important;}
+      /* Kill the inline section padding too */
+      section#services{padding:2.5rem 0!important;}
+      section#why{padding:2.5rem 0!important;}
       .svc{min-height:360px!important;}
       .svc .svc-p{max-height:none!important;opacity:1!important;}
       .svc .svc-btn{display:inline-flex!important;}
@@ -400,7 +403,7 @@
       .svc-p{font-size:.82rem!important;}
 
       /* ── WHY SPLIT ── */
-      .why-split{grid-template-columns:1fr!important;gap:2rem!important;}
+      .why-split{grid-template-columns:1fr!important;gap:1.5rem!important;}
       .why-split > div:first-child{order:2!important;max-width:100%!important;margin:0!important;}
       .why-split > div:last-child{order:1!important;}
       .why-split > div:last-child > div:first-child{aspect-ratio:3/4!important;}
