@@ -3,11 +3,24 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TEJ Salon & Spa, Allen, Ikeja, Lagos</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>TEJ Salon &amp; Spa — Hair, Beauty &amp; Spa in Lagos</title>
+  <!-- Performance & SEO -->
+  <meta name="theme-color" content="#1e1208"/>
+  <meta name="description" content="TEJ Salon &amp; Spa — Premium hair, beauty and spa services at two locations in Lagos: Allen, Ikeja and Lekki Phase 1. Book now on WhatsApp."/>
+
+  <!-- Preconnect to external origins early -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin/>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin/>
+  <link rel="dns-prefetch" href="https://raw.githubusercontent.com"/>
+
+  <!-- Preload hero background image (critical above-the-fold resource) -->
+  <link rel="preload" as="image" href="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/salon-bg.png" fetchpriority="high"/>
+
+  <!-- Google Fonts — load async with display=swap so text shows immediately -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/></noscript>
 
   <style>
     /* ── PALETTE ── */
@@ -33,13 +46,13 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
     body{
-      font-family:'Inter',sans-serif;
+      font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
       background:var(--parch);
       color:var(--espresso);
       overflow-x:hidden;
       cursor:none;
     }
-    h1,h2,h3,h4{font-family:'Playfair Display',serif;}
+    h1,h2,h3,h4{font-family:'Playfair Display',Georgia,'Times New Roman',serif;}
     .italiana{font-family:'Playfair Display',serif;}
 
     /* ── CURSOR ── */
@@ -685,7 +698,7 @@
       fetchpriority="high"
       style="width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block;"
       onerror="this.onerror=null;this.src='salon-bg.png';"
-    />
+    / decoding="async">
   </div>
 
   <!-- Flat dark overlay — no gradient -->
@@ -817,6 +830,7 @@
               muted
               loop
               playsinline
+              preload="none"
               style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"
             >
               <source src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/Visit%20our%20lekki%20branch%20at%208%20Iron%20bar%2C%20Lekki%20Phase%201.%20Open%20Tuesday-Saturday%209-30am-7pm%2C%20Sunday%201p.mp4" type="video/mp4"/>
@@ -855,7 +869,7 @@
     <div class="svc-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem;">
 
       <div class="svc sr d1">
-        <img class="svc-bg" src="hair-fx.png" alt="Hair Styling at TEJ Salon" loading="eager" fetchpriority="high"/>
+        <img class="svc-bg" src="hair-fx.png" alt="Hair Styling at TEJ Salon" loading="lazy" decoding="async"/>
         <div class="svc-overlay"></div>
         <div class="svc-tag">Hair</div>
         <div class="svc-body">
@@ -866,7 +880,7 @@
       </div>
 
       <div class="svc sr d2">
-        <img class="svc-bg" src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&h=800&q=90&auto=format&fit=crop&crop=face" alt="Facials" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1523263685509-57c1d050d19b?w=600&h=800&q=80&fit=crop'"/>
+        <img class="svc-bg" src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&h=800&q=90&auto=format&fit=crop&crop=face" alt="Facials" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1523263685509-57c1d050d19b?w=600&h=800&q=80&fit=crop'"/ decoding="async">
         <div class="svc-overlay"></div>
         <div class="svc-tag">Skincare</div>
         <div class="svc-body">
@@ -877,7 +891,7 @@
       </div>
 
       <div class="svc sr d3">
-        <img class="svc-bg" src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&h=800&q=90&auto=format&fit=crop" alt="Nails" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=600&h=800&q=80&fit=crop'"/>
+        <img class="svc-bg" src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&h=800&q=90&auto=format&fit=crop" alt="Nails" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=600&h=800&q=80&fit=crop'"/ decoding="async">
         <div class="svc-overlay"></div>
         <div class="svc-tag">Nails</div>
         <div class="svc-body">
@@ -888,7 +902,7 @@
       </div>
 
       <div class="svc sr d4">
-        <img class="svc-bg" src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&h=800&q=90&auto=format&fit=crop" alt="Spa" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=800&q=80&fit=crop'"/>
+        <img class="svc-bg" src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&h=800&q=90&auto=format&fit=crop" alt="Spa" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&h=800&q=80&fit=crop'"/ decoding="async">
         <div class="svc-overlay"></div>
         <div class="svc-tag">Wellness</div>
         <div class="svc-body">
@@ -899,7 +913,7 @@
       </div>
 
       <div class="svc sr d5">
-        <img class="svc-bg" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=800&q=90&auto=format&fit=crop&crop=top" alt="Bridal" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&h=800&q=80&fit=crop'"/>
+        <img class="svc-bg" src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=800&q=90&auto=format&fit=crop&crop=top" alt="Bridal" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&h=800&q=80&fit=crop'"/ decoding="async">
         <div class="svc-overlay"></div>
         <div class="svc-tag">Bridal</div>
         <div class="svc-body">
@@ -910,7 +924,7 @@
       </div>
 
       <div class="svc sr d6">
-        <img class="svc-bg" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=800&q=90&auto=format&fit=crop" alt="Beauty Consultation" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&h=800&q=80&fit=crop'"/>
+        <img class="svc-bg" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=800&q=90&auto=format&fit=crop" alt="Beauty Consultation" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&h=800&q=80&fit=crop'"/ decoding="async">
         <div class="svc-overlay"></div>
         <div class="svc-tag">Consultation</div>
         <div class="svc-body">
@@ -935,7 +949,7 @@
       <!-- LEFT: TEJ Video Frame -->
       <div style="position:relative;">
         <div style="position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:var(--espresso);box-shadow:0 24px 64px rgba(46,31,22,.22);">
-          <video autoplay muted loop playsinline preload="auto"
+          <video autoplay muted loop playsinline preload="none"
             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
             <source src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/tej%20video.mp4" type="video/mp4"/>
             <source src="tej%20video.mp4" type="video/mp4"/>
@@ -1039,7 +1053,7 @@
 
         <!-- Mobile carousel image — only visible on mobile, sits above CTA -->
         <div class="why-mobile-img sr d6" style="margin-top:2rem;display:none;border-radius:18px;overflow:hidden;aspect-ratio:4/3;position:relative;background:var(--espresso);">
-          <video autoplay muted loop playsinline preload="auto"
+          <video autoplay muted loop playsinline preload="none"
             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;">
             <source src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/tej%20video.mp4" type="video/mp4"/>
             <source src="tej%20video.mp4" type="video/mp4"/>
@@ -1330,7 +1344,7 @@
       src="salon-bg.png"
       alt="TEJ Salon interior"
       loading="lazy"
-      style="width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block;"
+      style="width:100%;height:100%;object-fit:cover;object-position:center 55%;display:block;" loading="lazy" decoding="async"
     />
   </div>
 
