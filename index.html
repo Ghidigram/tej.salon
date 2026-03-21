@@ -1201,11 +1201,11 @@
 
         <!-- Mobile carousel image — only visible on mobile, sits above CTA -->
         <!-- Mobile: full 12-image carousel — matches service card size -->
-        <div class="why-mobile-img sr d6" style="margin-top:2rem;display:none;border-radius:20px;overflow:hidden;aspect-ratio:3/4;position:relative;background:var(--espresso);width:100%;min-height:360px;">
-          <div id="tej-mob-slides" style="display:flex;height:100%;transition:transform .7s cubic-bezier(.16,1,.3,1);">
+        <div class="why-mobile-img sr d6" style="margin-top:2rem;display:none;border-radius:20px;overflow:hidden;aspect-ratio:3/4;position:relative;background:#1a1008;width:100%;">
+          <div id="tej-mob-slides" style="display:flex;width:1200%;height:100%;transition:transform .7s cubic-bezier(.16,1,.3,1);">
 
-            <div class="tej-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0408.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0408.PNG'" style="width:100%;height:100%;object-fit:contain;object-position:center center;background:#1a1008;display:block;"/></div>
-            <div class="tej-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0416.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0416.PNG'" style="width:100%;height:100%;object-fit:contain;object-position:center center;background:#1a1008;display:block;"/></div>
+            <div class="tej-mob-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0408.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0408.PNG'"/></div>
+            <div class="tej-mob-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0416.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0416.PNG'" style="width:100%;height:100%;object-fit:contain;object-position:center center;background:#1a1008;display:block;"/></div>
             <div class="tej-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0417.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0417.PNG'" style="width:100%;height:100%;object-fit:contain;object-position:center center;background:#1a1008;display:block;"/></div>
             <div class="tej-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0419.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0419.PNG'" style="width:100%;height:100%;object-fit:contain;object-position:center center;background:#1a1008;display:block;"/></div>
             <div class="tej-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0410.PNG" alt="TEJ Spa" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0410.PNG'" style="width:100%;height:100%;object-fit:contain;object-position:center center;background:#1a1008;display:block;"/></div>
@@ -1261,7 +1261,7 @@
         <span class="lbl" style="color:var(--clay);">Happy Clients</span>
         <div style="width:28px;height:1.5px;background:linear-gradient(to left,transparent,var(--clay));border-radius:2px;"></div>
       </div>
-      <h2 class="d-lg sr d1" style="color:var(--espresso);">What Our Clients <em class="clay-text" style="font-style:italic;">Say</em></h2>
+      <h2 class="d-lg sr d1" style="color:var(--espresso);">Real Visits. Real <em class="clay-text" style="font-style:italic;">Results.</em></h2>
       <div style="display:flex;align-items:center;justify-content:center;gap:.3rem;margin-top:1rem;">
         <span style="color:var(--clay);font-size:1.1rem;">★★★★★</span>
         <span style="font-size:.82rem;font-weight:500;color:var(--mink);margin-left:.4rem;">5.0 · 200+ reviews</span>
@@ -1823,28 +1823,46 @@
 <style>
   .tej-mob-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .3s,width .3s,border-radius .3s;}
   .tej-mob-active{background:#fff;width:16px;border-radius:3px;}
+
+  /* Mobile carousel slide — each = 1/12 of 1200% track = 100% of container */
+  .tej-mob-slide{
+    width: calc(100% / 12);
+    height: 100%;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    background: #1a1008;
+  }
+  .tej-mob-slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
 </style>
 <script>
   (function(){
     const mob = document.getElementById('tej-mob-slides');
     if(!mob) return;
     const dots = document.querySelectorAll('.tej-mob-dot');
-    let mc=0, mt=12, mt2;
+    const total = 12;
+    let mc=0, timer;
 
     function mobGo(n){
-      mc=(n+mt)%mt;
-      mob.style.transform=`translateX(-${mc*100}%)`;
+      mc = (n + total) % total;
+      // Each slide is 1/total of the track width
+      mob.style.transform = `translateX(-${mc * (100/total)}%)`;
       dots.forEach((d,i)=>{ d.classList.toggle('tej-mob-active', i===Math.floor(mc/4)); });
     }
-    window.mobSlide = d => { mobGo(mc+d); reset(); };
+    window.mobSlide = d => { mobGo(mc+d); clearInterval(timer); timer=setInterval(()=>mobGo(mc+1),4200); };
 
-    function reset(){ clearInterval(mt2); mt2=setInterval(()=>mobGo(mc+1),4200); }
-    reset();
+    timer = setInterval(()=>mobGo(mc+1), 4200);
 
-    let msx=0;
-    mob.addEventListener('touchstart',e=>{msx=e.touches[0].clientX;},{passive:true});
+    let sx=0;
+    mob.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});
     mob.addEventListener('touchend',e=>{
-      const dx=e.changedTouches[0].clientX-msx;
+      const dx=e.changedTouches[0].clientX-sx;
       if(Math.abs(dx)>40){ dx<0?mobSlide(1):mobSlide(-1); }
     });
   })();
