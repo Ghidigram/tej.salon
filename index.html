@@ -1835,14 +1835,10 @@
       });
     }
 <style>
-  /* Mobile-only why carousel */
-  /* Mobile why carousel — hidden by default, shown on mobile */
-  .why-mob-carousel{display:none!important;}
-  @media(max-width:768px){ .why-mob-carousel{display:block!important;} }
+  /* Mobile carousel slide */
   .tej-mob2-slide{
-    width:calc(100% / 12);
-    height:100%;
     flex-shrink:0;
+    height:100%;
     overflow:hidden;
   }
   .tej-mob2-slide img{
@@ -1855,21 +1851,63 @@
 </style>
 <script>
   (function(){
+    const wrap  = document.querySelector('.why-mob-carousel');
     const track = document.getElementById('tej-mob2-slides');
-    if(!track) return;
-    const dots  = document.querySelectorAll('.m2d');
+    if(!wrap || !track) return;
+
     const total = 12;
     let cur = 0, tmr;
+
+    function slideWidth(){
+      return wrap.offsetWidth;  // actual pixel width of the container
+    }
+
     function go(n){
       cur = (n + total) % total;
-      track.style.transform = `translateX(-${cur*(100/total)}%)`;
-      dots.forEach((d,i)=>{ d.classList.toggle('m2d-on', i===Math.floor(cur/4)); });
+      const w = slideWidth();
+      // Set each slide to container width, then translate
+      Array.from(track.children).forEach(s => s.style.width = w + 'px');
+      track.style.width = (w * total) + 'px';
+      track.style.transform = `translateX(-${cur * w}px)`;
+      document.querySelectorAll('.m2d').forEach((d,i)=>{
+        d.classList.toggle('m2d-on', i === Math.floor(cur/4));
+      });
     }
-    window.m2Slide = d => { go(cur+d); clearInterval(tmr); tmr=setInterval(()=>go(cur+1),4200); };
-    tmr = setInterval(()=>go(cur+1), 4200);
+
+    function start(){
+      clearInterval(tmr);
+      tmr = setInterval(()=>go(cur+1), 4200);
+    }
+
+    window.m2Slide = d => { go(cur+d); start(); };
+
+    // Init: wait for element to be visible and have real width
+    function init(){
+      if(slideWidth() > 0){
+        go(0);
+        start();
+      } else {
+        setTimeout(init, 100);
+      }
+    }
+
+    // Re-init on resize
+    window.addEventListener('resize', ()=>{ go(cur); });
+
+    // Also observe visibility changes (for when it becomes visible at 1024px)
+    if(window.ResizeObserver){
+      new ResizeObserver(()=>{ if(slideWidth()>0) go(cur); }).observe(wrap);
+    }
+
+    setTimeout(init, 200);
+
+    // Touch swipe
     let sx=0;
     track.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});
-    track.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){m2Slide(dx<0?1:-1);}});
+    track.addEventListener('touchend',e=>{
+      const dx=e.changedTouches[0].clientX-sx;
+      if(Math.abs(dx)>40){ m2Slide(dx<0?1:-1); }
+    });
   })();
 </script>
 </body>
