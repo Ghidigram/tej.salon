@@ -1199,7 +1199,7 @@
         </div>
 
         <!-- Mobile carousel frame — hidden on desktop, shows on mobile above CTA -->
-        <div class="why-mob-carousel" style="display:none;margin-top:2rem;border-radius:18px;overflow:hidden;aspect-ratio:3/4;position:relative;background:#1a1008;box-shadow:0 16px 48px rgba(46,31,22,.18);">
+        <div class="why-mob-carousel" style="margin-top:2rem;border-radius:18px;overflow:hidden;aspect-ratio:3/4;position:relative;background:#1a1008;box-shadow:0 16px 48px rgba(46,31,22,.18);">
           <div id="tej-mob2-slides" style="display:flex;width:1200%;height:100%;transition:transform .7s cubic-bezier(.16,1,.3,1);">
             <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0408.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0408.PNG'"/></div>
             <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0416.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0416.PNG'"/></div>
@@ -1822,7 +1822,8 @@
     }
 <style>
   /* Mobile-only why carousel */
-  .why-mob-carousel{display:none;}
+  /* Mobile why carousel — hidden by default, shown on mobile */
+  .why-mob-carousel{display:none!important;}
   @media(max-width:768px){ .why-mob-carousel{display:block!important;} }
   .tej-mob2-slide{
     width:calc(100% / 12);
