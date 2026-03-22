@@ -950,7 +950,7 @@
         <div style="position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:var(--espresso);box-shadow:0 24px 64px rgba(46,31,22,.22);">
 
           <!-- Slides wrapper -->
-          <div id="tej-slides" style="display:flex;height:100%;transition:transform .7s cubic-bezier(.16,1,.3,1);">
+          <div id="tej-slides" style="display:flex;width:1200%;height:100%;transition:transform .7s cubic-bezier(.16,1,.3,1);">
             
             <!-- Slide 1 -->
             <div class="tej-slide">
@@ -1198,8 +1198,36 @@
           <span style="font-size:.7rem;font-weight:600;color:var(--clay);letter-spacing:.1em;text-transform:uppercase;">Adaeze O. &nbsp;★★★★★</span>
         </div>
 
-        <!-- Mobile carousel image — only visible on mobile, sits above CTA -->
-        <!-- Mobile: full 12-image carousel — matches service card size -->
+        <!-- Mobile carousel frame — hidden on desktop, shows on mobile above CTA -->
+        <div class="why-mob-carousel" style="display:none;margin-top:2rem;border-radius:18px;overflow:hidden;aspect-ratio:3/4;position:relative;background:#1a1008;box-shadow:0 16px 48px rgba(46,31,22,.18);">
+          <div id="tej-mob2-slides" style="display:flex;width:1200%;height:100%;transition:transform .7s cubic-bezier(.16,1,.3,1);">
+            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0408.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0408.PNG'"/></div>
+            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0416.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0416.PNG'"/></div>
+            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0417.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0417.PNG'"/></div>
+            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0412.PNG" alt="TEJ Hair" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0412.PNG'"/></div>
+            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0410.PNG" alt="TEJ Spa" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0410.PNG'"/></div>
+            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0404.PNG" alt="TEJ Braids" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0404.PNG'"/></div>
+            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0407.PNG" alt="TEJ Hair" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0407.PNG'"/></div>
+            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0419.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0419.PNG'"/></div>
+            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0421.PNG" alt="TEJ Interiors" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0421.PNG'"/></div>
+            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0418.PNG" alt="TEJ Interiors" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0418.PNG'"/></div>
+            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0399.PNG" alt="TEJ Nails" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0399.PNG'"/></div>
+            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0401.PNG" alt="TEJ Nails" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0401.PNG'"/></div>
+          </div>
+          <!-- Arrows -->
+          <button onclick="m2Slide(-1)" style="position:absolute;top:50%;left:.8rem;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.28);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;backdrop-filter:blur(8px);">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button onclick="m2Slide(1)" style="position:absolute;top:50%;right:.8rem;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.28);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;backdrop-filter:blur(8px);">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <!-- Dots -->
+          <div style="position:absolute;bottom:.9rem;left:50%;transform:translateX(-50%);display:flex;gap:.35rem;">
+            <div class="m2d m2d-on"></div>
+            <div class="m2d"></div>
+            <div class="m2d"></div>
+          </div>
+        </div>
 
         <!-- CTA -->
         <div class="sr d6" style="margin-top:2rem;">
@@ -1740,8 +1768,19 @@
 
 <style>
   .tej-slide{
-    min-width:100%;height:100%;position:relative;flex-shrink:0;
+    width:calc(100% / 12);
+    height:100%;
+    position:relative;
+    flex-shrink:0;
     background:#1a1008;
+    overflow:hidden;
+  }
+  .tej-slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
+    display:block;
   }
   .tej-dot{
     width:5px;height:5px;border-radius:50%;border:none;
@@ -1760,8 +1799,7 @@
 
     function go(n){
       cur = (n + total) % total;
-      document.getElementById('tej-slides').style.transform = `translateX(-${cur * 100}%)`;
-      document.getElementById('tej-counter').textContent = (cur+1) + ' / ' + total;
+      document.getElementById('tej-slides').style.transform = `translateX(-${cur * (100/12)}%)`;
       document.querySelectorAll('.tej-dot').forEach((d,i)=>{
         d.classList.toggle('tej-dot-active', i===Math.floor(cur/4));
       });
@@ -1782,6 +1820,41 @@
         if(Math.abs(dx)>40){ dx<0 ? tejSlide(1) : tejSlide(-1); }
       });
     }
+<style>
+  /* Mobile-only why carousel */
+  .why-mob-carousel{display:none;}
+  @media(max-width:768px){ .why-mob-carousel{display:block!important;} }
+  .tej-mob2-slide{
+    width:calc(100% / 12);
+    height:100%;
+    flex-shrink:0;
+    overflow:hidden;
+  }
+  .tej-mob2-slide img{
+    width:100%;height:100%;
+    object-fit:cover;object-position:center center;
+    display:block;
+  }
+  .m2d{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .3s,width .3s,border-radius .3s;}
+  .m2d-on{background:#fff;width:14px;border-radius:3px;}
+</style>
+<script>
+  (function(){
+    const track = document.getElementById('tej-mob2-slides');
+    if(!track) return;
+    const dots  = document.querySelectorAll('.m2d');
+    const total = 12;
+    let cur = 0, tmr;
+    function go(n){
+      cur = (n + total) % total;
+      track.style.transform = `translateX(-${cur*(100/total)}%)`;
+      dots.forEach((d,i)=>{ d.classList.toggle('m2d-on', i===Math.floor(cur/4)); });
+    }
+    window.m2Slide = d => { go(cur+d); clearInterval(tmr); tmr=setInterval(()=>go(cur+1),4200); };
+    tmr = setInterval(()=>go(cur+1), 4200);
+    let sx=0;
+    track.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});
+    track.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){m2Slide(dx<0?1:-1);}});
   })();
 </script>
 </body>
