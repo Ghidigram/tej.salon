@@ -116,31 +116,15 @@
     .svc-header{margin-bottom:5rem;}
     .why-split{gap:6rem;}
 
-    /* ── WHY SECTION — ALL BREAKPOINTS ── */
+    /* Why Choose Us — responsive */
+    .why-mob-carousel{display:none;}
 
-    /* Tablet ≤1024px */
     @media(max-width:1024px){
-      .why-split{
-        grid-template-columns:1fr!important;
-        gap:2.5rem!important;
-      }
-      /* Desktop carousel hidden — mobile carousel takes over */
+      .why-split{grid-template-columns:1fr!important;gap:2rem!important;}
       .why-split > div:first-child{display:none!important;}
-      /* Text column full width, above */
-      .why-split > div:last-child{order:1!important;width:100%!important;}
-      /* Mobile carousel visible */
-      .why-mob-carousel{display:block!important;}
+      .why-mob-carousel{display:block!important;margin-top:2rem;}
     }
-
-    /* Mobile ≤768px */
     @media(max-width:768px){
-      .why-split{gap:2rem!important;}
-      .why-mob-carousel{
-        aspect-ratio:4/5!important;
-        border-radius:16px!important;
-      }
-      .why-item-row > div:last-child > span:first-child{font-size:.92rem!important;}
-      .why-item-row > div:last-child > span:last-child{font-size:.87rem!important;}
       #why .btn-c{width:100%!important;justify-content:center!important;}
     }
     /* ── HERO STATS ── */
@@ -1226,36 +1210,6 @@
           <span style="font-size:.7rem;font-weight:600;color:var(--clay);letter-spacing:.1em;text-transform:uppercase;">Adaeze O. &nbsp;★★★★★</span>
         </div>
 
-        <!-- Mobile carousel frame — hidden on desktop, shows on mobile above CTA -->
-        <div class="why-mob-carousel" style="margin-top:2rem;border-radius:18px;overflow:hidden;aspect-ratio:3/4;position:relative;background:#1a1008;box-shadow:0 16px 48px rgba(46,31,22,.18);">
-          <div id="tej-mob2-slides" style="display:flex;width:1200%;height:100%;transition:transform .7s cubic-bezier(.16,1,.3,1);">
-            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0408.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0408.PNG'"/></div>
-            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0416.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0416.PNG'"/></div>
-            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0417.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0417.PNG'"/></div>
-            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0412.PNG" alt="TEJ Hair" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0412.PNG'"/></div>
-            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0410.PNG" alt="TEJ Spa" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0410.PNG'"/></div>
-            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0404.PNG" alt="TEJ Braids" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0404.PNG'"/></div>
-            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0407.PNG" alt="TEJ Hair" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0407.PNG'"/></div>
-            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0419.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0419.PNG'"/></div>
-            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0421.PNG" alt="TEJ Interiors" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0421.PNG'"/></div>
-            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0418.PNG" alt="TEJ Interiors" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0418.PNG'"/></div>
-            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0399.PNG" alt="TEJ Nails" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0399.PNG'"/></div>
-            <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0401.PNG" alt="TEJ Nails" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0401.PNG'"/></div>
-          </div>
-          <!-- Arrows -->
-          <button onclick="m2Slide(-1)" style="position:absolute;top:50%;left:.8rem;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.28);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;backdrop-filter:blur(8px);">
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
-          </button>
-          <button onclick="m2Slide(1)" style="position:absolute;top:50%;right:.8rem;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.28);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;backdrop-filter:blur(8px);">
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
-          <!-- Dots -->
-          <div style="position:absolute;bottom:.9rem;left:50%;transform:translateX(-50%);display:flex;gap:.35rem;">
-            <div class="m2d m2d-on"></div>
-            <div class="m2d"></div>
-            <div class="m2d"></div>
-          </div>
-        </div>
 
         <!-- CTA -->
         <div class="sr d6" style="margin-top:2rem;">
@@ -1267,6 +1221,38 @@
 
       </div>
     </div>
+
+    <!-- Mobile/Tablet carousel — shows below text on small screens -->
+    <div class="why-mob-carousel" style="margin-top:2rem;border-radius:18px;overflow:hidden;aspect-ratio:4/5;position:relative;background:#1a1008;box-shadow:0 16px 48px rgba(46,31,22,.18);">
+      <div id="tej-mob2-slides" style="display:flex;width:1200%;height:100%;transition:transform .7s cubic-bezier(.16,1,.3,1);">
+        <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0408.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0408.PNG'"/></div>
+        <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0416.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0416.PNG'"/></div>
+        <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0417.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0417.PNG'"/></div>
+        <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0412.PNG" alt="TEJ Hair" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0412.PNG'"/></div>
+        <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0410.PNG" alt="TEJ Spa" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0410.PNG'"/></div>
+        <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0404.PNG" alt="TEJ Braids" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0404.PNG'"/></div>
+        <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0407.PNG" alt="TEJ Hair" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0407.PNG'"/></div>
+        <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0419.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0419.PNG'"/></div>
+        <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0421.PNG" alt="TEJ Interiors" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0421.PNG'"/></div>
+        <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0418.PNG" alt="TEJ Interiors" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0418.PNG'"/></div>
+        <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0399.PNG" alt="TEJ Nails" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0399.PNG'"/></div>
+        <div class="tej-mob2-slide"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0401.PNG" alt="TEJ Nails" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0401.PNG'"/></div>
+      </div>
+      <!-- Arrows -->
+      <button onclick="m2Slide(-1)" style="position:absolute;top:50%;left:.8rem;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;backdrop-filter:blur(8px);">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button onclick="m2Slide(1)" style="position:absolute;top:50%;right:.8rem;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;backdrop-filter:blur(8px);">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+      <!-- Dots -->
+      <div style="position:absolute;bottom:.9rem;left:50%;transform:translateX(-50%);display:flex;gap:.4rem;">
+        <div class="m2d m2d-on"></div>
+        <div class="m2d"></div>
+        <div class="m2d"></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
