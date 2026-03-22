@@ -115,6 +115,34 @@
     .page-section{padding:9rem 0;}
     .svc-header{margin-bottom:5rem;}
     .why-split{gap:6rem;}
+
+    /* ── WHY SECTION — ALL BREAKPOINTS ── */
+
+    /* Tablet ≤1024px */
+    @media(max-width:1024px){
+      .why-split{
+        grid-template-columns:1fr!important;
+        gap:2.5rem!important;
+      }
+      /* Desktop carousel hidden — mobile carousel takes over */
+      .why-split > div:first-child{display:none!important;}
+      /* Text column full width, above */
+      .why-split > div:last-child{order:1!important;width:100%!important;}
+      /* Mobile carousel visible */
+      .why-mob-carousel{display:block!important;}
+    }
+
+    /* Mobile ≤768px */
+    @media(max-width:768px){
+      .why-split{gap:2rem!important;}
+      .why-mob-carousel{
+        aspect-ratio:4/5!important;
+        border-radius:16px!important;
+      }
+      .why-item-row > div:last-child > span:first-child{font-size:.92rem!important;}
+      .why-item-row > div:last-child > span:last-child{font-size:.87rem!important;}
+      #why .btn-c{width:100%!important;justify-content:center!important;}
+    }
     /* ── HERO STATS ── */
     .stat-num{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:300;color:#fff;line-height:1;}
     .stat-lbl{font-family:'Inter',sans-serif;font-size:.58rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:.2rem;}
@@ -385,7 +413,7 @@
       .page-section{padding:2.5rem 0!important;}
       #about,#reviews,#cta{padding:2.5rem 0!important;}
       .svc-header{margin-bottom:1.5rem!important;}
-      .why-split{gap:1.5rem!important;}
+
 
       /* ── HERO ── */
       #hero{min-height:100svh;}
@@ -442,7 +470,7 @@
 
       /* ── WHY SPLIT ── */
       .why-split{grid-template-columns:1fr!important;gap:1.5rem!important;}
-      .why-split > div:first-child{order:2!important;max-width:100%!important;margin:0!important;display:none!important;}
+      /* why first child mobile */
       .why-split > div:last-child{order:1!important;}
       .why-carousel-track{aspect-ratio:3/4!important;}
       .why-item-row{gap:.75rem!important;}
