@@ -1003,6 +1003,8 @@
      </div>
     </div>
 
+    <div style="margin-top:2rem;"></div>
+
     <!-- Mobile-only image before CTA -->
     <div class="why-mob-img sr" style="display:none;border-radius:18px;overflow:hidden;aspect-ratio:4/5;margin-bottom:2rem;margin-top:2rem;">
      <img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0419.PNG"
@@ -1077,50 +1079,108 @@
     <span style="font-size:.82rem;font-weight:500;color:var(--mink);margin-left:.4rem;">5.0 · 200+ reviews</span>
    </div>
   </div>
-  <div class="rev-rows">
-   <div class="rev-row sr d1">
-    <div class="rev-row-img"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0408.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0408.PNG'"/></div>
-    <div class="rev-row-text">
-     <div style="color:var(--clay);font-size:1rem;letter-spacing:.1em;margin-bottom:.9rem;">★★★★★</div>
-     <p class="rev-row-quote">"I work long hours. My body knows it. TEJ is the reset button I didn't know I had access to. I book every two weeks now it's not a luxury anymore, it's maintenance."</p>
-     <div class="rev-row-author"> Kemi S.</div>
+  <!-- Carousel wrapper -->
+  <div style="position:relative;">
+
+   <!-- Slides -->
+   <div id="rev-car" style="overflow:hidden;">
+    <div id="rev-track" style="display:flex;transition:transform .6s cubic-bezier(.16,1,.3,1);">
+
+     <!-- Slide 1 -->
+     <div class="rev-slide">
+      <div class="rev-row sr d1">
+       <div class="rev-row-img"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0408.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0408.PNG'"/></div>
+       <div class="rev-row-text">
+        <div style="color:var(--clay);font-size:1rem;letter-spacing:.1em;margin-bottom:.9rem;">★★★★★</div>
+        <p class="rev-row-quote">"I work long hours. My body knows it. TEJ is the reset button I didn't know I had access to. I book every two weeks now. It's not a luxury anymore, it's maintenance."</p>
+        <div class="rev-row-author">Kemi S.</div>
+       </div>
+      </div>
+     </div>
+
+     <!-- Slide 2 -->
+     <div class="rev-slide">
+      <div class="rev-row sr d1">
+       <div class="rev-row-img"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0416.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0416.PNG'"/></div>
+       <div class="rev-row-text">
+        <div style="color:var(--clay);font-size:1rem;letter-spacing:.1em;margin-bottom:.9rem;">★★★★★</div>
+        <p class="rev-row-quote">"The kind of glow you get after a TEJ facial is not something a filter can replicate. I caught my reflection in the Uber home and genuinely smiled."</p>
+        <div class="rev-row-author">Fatima A.</div>
+       </div>
+      </div>
+     </div>
+
+     <!-- Slide 3 -->
+     <div class="rev-slide">
+      <div class="rev-row sr d1">
+       <div class="rev-row-img"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0399.PNG" alt="TEJ Nails" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0399.PNG'"/></div>
+       <div class="rev-row-text">
+        <div style="color:var(--clay);font-size:1rem;letter-spacing:.1em;margin-bottom:.9rem;">★★★★★</div>
+        <p class="rev-row-quote">"Three weeks after my appointment, someone asked if I had just gotten my nails done. That's TEJ for you. Details that outlast the moment."</p>
+        <div class="rev-row-author">Tolu M.</div>
+       </div>
+      </div>
+     </div>
+
     </div>
    </div>
-   <div style="height:1px;background:var(--linen);margin:0;"></div>
-   <div class="rev-row sr d2">
-    <div class="rev-row-img"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0416.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0416.PNG'"/></div>
-    <div class="rev-row-text">
-     <div style="color:var(--clay);font-size:1rem;letter-spacing:.1em;margin-bottom:.9rem;">★★★★★</div>
-     <p class="rev-row-quote">"The kind of glow you get after a TEJ facial is not something a filter can replicate. I caught my reflection in the Uber home and genuinely smiled."</p>
-     <div class="rev-row-author"> Fatima A.</div>
-    </div>
+
+   <!-- Prev / Next -->
+   <button onclick="revSlide(-1)" style="position:absolute;top:50%;left:-1.5rem;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:#fff;border:1.5px solid var(--linen);color:var(--espresso);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.08);transition:box-shadow .25s;" onmouseover="this.style.boxShadow='0 6px 24px rgba(0,0,0,.14)'" onmouseout="this.style.boxShadow='0 4px 16px rgba(0,0,0,.08)'">
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+   </button>
+   <button onclick="revSlide(1)" style="position:absolute;top:50%;right:-1.5rem;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:#fff;border:1.5px solid var(--linen);color:var(--espresso);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.08);transition:box-shadow .25s;" onmouseover="this.style.boxShadow='0 6px 24px rgba(0,0,0,.14)'" onmouseout="this.style.boxShadow='0 4px 16px rgba(0,0,0,.08)'">
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+   </button>
+
+   <!-- Dots -->
+   <div style="display:flex;justify-content:center;gap:.5rem;margin-top:2rem;">
+    <button class="rv-dot rv-dot-on" onclick="revGoTo(0)"></button>
+    <button class="rv-dot" onclick="revGoTo(1)"></button>
+    <button class="rv-dot" onclick="revGoTo(2)"></button>
    </div>
-   <div style="height:1px;background:var(--linen);margin:0;"></div>
-   <div class="rev-row sr d3">
-    <div class="rev-row-img"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0399.PNG" alt="Nail art at TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0399.PNG'"/></div>
-    <div class="rev-row-text">
-     <div style="color:var(--clay);font-size:1rem;letter-spacing:.1em;margin-bottom:.9rem;">★★★★★</div>
-     <p class="rev-row-quote">"Three weeks post-appointment, someone asked me if I'd just gotten my nails done. That's TEJ for you details that outlast the moment."</p>
-     <div class="rev-row-author"> Tolu M.</div>
-    </div>
-   </div>
+
   </div>
  </div>
 </section>
 
 <style>
- .rev-rows{display:flex;flex-direction:column;}
+ .rev-slide{min-width:100%;flex-shrink:0;padding:0 0.5rem;}
  .rev-row{display:grid;grid-template-columns:220px 1fr;gap:3rem;align-items:center;padding:2.5rem 0;}
  .rev-row-img{border-radius:16px;overflow:hidden;aspect-ratio:3/4;flex-shrink:0;}
  .rev-row-img img{width:100%;height:100%;object-fit:cover;display:block;}
  .rev-row-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;font-weight:300;color:var(--espresso);line-height:1.7;margin-bottom:1.2rem;}
  .rev-row-author{font-family:'Inter',sans-serif;font-size:.8rem;font-weight:500;color:var(--mink);letter-spacing:.05em;}
+ .rv-dot{width:7px;height:7px;border-radius:50%;border:none;background:var(--linen);cursor:pointer;padding:0;transition:background .3s,width .3s,border-radius .3s;}
+ .rv-dot-on{background:var(--clay);width:20px;border-radius:4px;}
  @media(max-width:768px){
   .rev-row{grid-template-columns:1fr!important;gap:1.2rem!important;padding:2rem 0!important;}
   .rev-row-img{aspect-ratio:16/9!important;border-radius:12px!important;}
   .rev-row-quote{font-size:1rem!important;}
  }
 </style>
+<script>
+ (function(){
+  const track=document.getElementById('rev-track');
+  const total=3;
+  let cur=0,tmr;
+  function go(n){
+   cur=(n+total)%total;
+   track.style.transform=`translateX(-${cur*100}%)`;
+   document.querySelectorAll('.rv-dot').forEach((d,i)=>{
+    d.classList.toggle('rv-dot-on',i===cur);
+   });
+  }
+  window.revSlide=d=>{go(cur+d);reset();};
+  window.revGoTo=i=>{go(i);reset();};
+  function reset(){clearInterval(tmr);tmr=setInterval(()=>go(cur+1),5000);}
+  reset();
+  // Swipe
+  let sx=0;
+  track.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});
+  track.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){revSlide(dx<0?1:-1);}});
+ })();
+</script>
 
 <!-- ══════════════ IMAGE SCROLL STRIP ══════════════ -->
 <div style="background:var(--parch2);padding:3rem 0;overflow:hidden;border-top:1px solid var(--linen);">
