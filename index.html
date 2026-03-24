@@ -1126,10 +1126,10 @@
    </div>
 
    <!-- Prev / Next -->
-   <button onclick="revSlide(-1)" style="position:absolute;top:50%;left:-1.5rem;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:#fff;border:1.5px solid var(--linen);color:var(--espresso);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.08);transition:box-shadow .25s;" onmouseover="this.style.boxShadow='0 6px 24px rgba(0,0,0,.14)'" onmouseout="this.style.boxShadow='0 4px 16px rgba(0,0,0,.08)'">
+   <button onclick="revSlide(-1)" class="rev-arrow rev-arrow-l">
     <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
    </button>
-   <button onclick="revSlide(1)" style="position:absolute;top:50%;right:-1.5rem;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:#fff;border:1.5px solid var(--linen);color:var(--espresso);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.08);transition:box-shadow .25s;" onmouseover="this.style.boxShadow='0 6px 24px rgba(0,0,0,.14)'" onmouseout="this.style.boxShadow='0 4px 16px rgba(0,0,0,.08)'">
+   <button onclick="revSlide(1)" class="rev-arrow rev-arrow-r">
     <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
    </button>
 
@@ -1145,7 +1145,15 @@
 </section>
 
 <style>
- .rev-slide{min-width:100%;flex-shrink:0;padding:0 0.5rem;}
+ .rev-arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:#fff;border:1.5px solid var(--linen);color:var(--espresso);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.08);transition:box-shadow .25s;z-index:5;}
+ .rev-arrow:hover{box-shadow:0 6px 24px rgba(0,0,0,.14);}
+ .rev-arrow-l{left:-1.5rem;}
+ .rev-arrow-r{right:-1.5rem;}
+ @media(max-width:768px){
+  .rev-arrow-l{left:.5rem;}
+  .rev-arrow-r{right:.5rem;}
+  .rev-arrow{top:auto;bottom:1rem;transform:none;width:36px;height:36px;}
+ }flex-shrink:0;padding:0 0.5rem;}
  .rev-row{display:grid;grid-template-columns:220px 1fr;gap:3rem;align-items:center;padding:2.5rem 0;}
  .rev-row-img{border-radius:16px;overflow:hidden;aspect-ratio:3/4;flex-shrink:0;}
  .rev-row-img img{width:100%;height:100%;object-fit:cover;display:block;}
@@ -1154,9 +1162,30 @@
  .rv-dot{width:7px;height:7px;border-radius:50%;border:none;background:var(--linen);cursor:pointer;padding:0;transition:background .3s,width .3s,border-radius .3s;}
  .rv-dot-on{background:var(--clay);width:20px;border-radius:4px;}
  @media(max-width:768px){
-  .rev-row{grid-template-columns:1fr!important;gap:1.2rem!important;padding:2rem 0!important;}
-  .rev-row-img{aspect-ratio:16/9!important;border-radius:12px!important;}
-  .rev-row-quote{font-size:1rem!important;}
+  /* Each slide stacks: image on top, text below */
+  .rev-row{
+    grid-template-columns:1fr!important;
+    gap:1.2rem!important;
+    padding:1.5rem 0!important;
+  }
+  /* Image: square-ish, full width, well-fitted */
+  .rev-row-img{
+    aspect-ratio:4/3!important;
+    border-radius:14px!important;
+    width:100%!important;
+    max-height:260px;
+    overflow:hidden;
+  }
+  .rev-row-img img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+    object-position:center top!important;
+  }
+  .rev-row-quote{font-size:.95rem!important;margin-bottom:.8rem!important;}
+  .rev-row-author{font-size:.78rem!important;}
+  /* Hide arrows on mobile — swipe instead */
+  #rev-car + button, #rev-car ~ button{display:none!important;}
  }
 </style>
 <script>
@@ -1358,5 +1387,7 @@
  function closeBooking(){const m=document.getElementById('booking-modal');m.classList.remove('active');setTimeout(()=>{m.style.display='none';document.body.style.overflow='';},200);}
  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeBooking();});
 </script>
+</body>
+</html>
 </body>
 </html>
