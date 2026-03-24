@@ -1066,7 +1066,8 @@
 
 <!-- ══════════════ REVIEWS ══════════════ -->
 <section id="reviews" style="padding:6rem 0;background:var(--parch2);">
- <div class="wrap" style="max-width:860px;">
+ <div class="wrap">
+
   <div class="sr" style="text-align:center;margin-bottom:3.5rem;">
    <div style="display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1.2rem;">
     <div style="width:28px;height:1.5px;background:linear-gradient(to right,transparent,var(--clay));border-radius:2px;"></div>
@@ -1079,65 +1080,74 @@
     <span style="font-size:.82rem;font-weight:500;color:var(--mink);margin-left:.4rem;">5.0 · 200+ reviews</span>
    </div>
   </div>
-  <!-- Carousel wrapper -->
-  <div style="position:relative;">
 
-   <!-- Slides -->
-   <div id="rev-car" style="overflow:hidden;">
-    <div id="rev-track" style="display:flex;transition:transform .6s cubic-bezier(.16,1,.3,1);">
+  <!-- Review card grid -->
+  <div class="rv-grid">
 
-     <!-- Slide 1 -->
-     <div class="rev-slide">
-      <div class="rev-row sr d1">
-       <div class="rev-row-img"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0408.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0408.PNG'"/></div>
-       <div class="rev-row-text">
-        <div style="color:var(--clay);font-size:1rem;letter-spacing:.1em;margin-bottom:.9rem;">★★★★★</div>
-        <p class="rev-row-quote">"I work long hours. My body knows it. TEJ is the reset button I didn't know I had access to. I book every two weeks now. It's not a luxury anymore, it's maintenance."</p>
-        <div class="rev-row-author">Kemi S.</div>
-       </div>
-      </div>
+   <div class="rv-card sr d1">
+    <div class="rv-stars">★★★★★ <span class="rv-rating">5.0</span></div>
+    <p class="rv-text">"I work long hours. My body knows it. TEJ is the reset button I didn't know I had access to. I book every two weeks now. It's not a luxury anymore, it's maintenance."</p>
+    <div class="rv-person">
+     <div class="rv-avatar">
+      <img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0408.PNG" alt="Kemi S." loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0408.PNG'"/>
      </div>
-
-     <!-- Slide 2 -->
-     <div class="rev-slide">
-      <div class="rev-row sr d1">
-       <div class="rev-row-img"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0416.PNG" alt="TEJ Salon" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0416.PNG'"/></div>
-       <div class="rev-row-text">
-        <div style="color:var(--clay);font-size:1rem;letter-spacing:.1em;margin-bottom:.9rem;">★★★★★</div>
-        <p class="rev-row-quote">"The kind of glow you get after a TEJ facial is not something a filter can replicate. I caught my reflection in the Uber home and genuinely smiled."</p>
-        <div class="rev-row-author">Fatima A.</div>
-       </div>
-      </div>
-     </div>
-
-     <!-- Slide 3 -->
-     <div class="rev-slide">
-      <div class="rev-row sr d1">
-       <div class="rev-row-img"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0399.PNG" alt="TEJ Nails" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0399.PNG'"/></div>
-       <div class="rev-row-text">
-        <div style="color:var(--clay);font-size:1rem;letter-spacing:.1em;margin-bottom:.9rem;">★★★★★</div>
-        <p class="rev-row-quote">"Three weeks after my appointment, someone asked if I had just gotten my nails done. That's TEJ for you. Details that outlast the moment."</p>
-        <div class="rev-row-author">Tolu M.</div>
-       </div>
-      </div>
-     </div>
-
+     <span class="rv-name">Kemi S.</span>
     </div>
    </div>
 
-   <!-- Prev / Next -->
-   <button onclick="revSlide(-1)" class="rev-arrow rev-arrow-l">
-    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
-   </button>
-   <button onclick="revSlide(1)" class="rev-arrow rev-arrow-r">
-    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-   </button>
+   <div class="rv-card sr d2">
+    <div class="rv-stars">★★★★★ <span class="rv-rating">5.0</span></div>
+    <p class="rv-text">"The kind of glow you get after a TEJ facial is not something a filter can replicate. I caught my reflection in the Uber home and genuinely smiled."</p>
+    <div class="rv-person">
+     <div class="rv-avatar">
+      <img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0416.PNG" alt="Fatima A." loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0416.PNG'"/>
+     </div>
+     <span class="rv-name">Fatima A.</span>
+    </div>
+   </div>
 
-   <!-- Dots -->
-   <div style="display:flex;justify-content:center;gap:.5rem;margin-top:2rem;">
-    <button class="rv-dot rv-dot-on" onclick="revGoTo(0)"></button>
-    <button class="rv-dot" onclick="revGoTo(1)"></button>
-    <button class="rv-dot" onclick="revGoTo(2)"></button>
+   <div class="rv-card sr d3">
+    <div class="rv-stars">★★★★★ <span class="rv-rating">5.0</span></div>
+    <p class="rv-text">"Three weeks after my appointment, someone asked if I had just gotten my nails done. That's TEJ for you. Details that outlast the moment."</p>
+    <div class="rv-person">
+     <div class="rv-avatar">
+      <img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0399.PNG" alt="Tolu M." loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0399.PNG'"/>
+     </div>
+     <span class="rv-name">Tolu M.</span>
+    </div>
+   </div>
+
+   <div class="rv-card sr d4">
+    <div class="rv-stars">★★★★★ <span class="rv-rating">5.0</span></div>
+    <p class="rv-text">"Walking into TEJ feels like the city quiets down. Within minutes, someone is asking what I need. I leave every time feeling like the best version of myself."</p>
+    <div class="rv-person">
+     <div class="rv-avatar">
+      <img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0412.PNG" alt="Adaeze O." loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0412.PNG'"/>
+     </div>
+     <span class="rv-name">Adaeze O.</span>
+    </div>
+   </div>
+
+   <div class="rv-card sr d5">
+    <div class="rv-stars">★★★★★ <span class="rv-rating">5.0</span></div>
+    <p class="rv-text">"On my wedding day, I wanted to look like myself, just elevated. TEJ understood that completely. Every photo from that day tells the story of how well they listened."</p>
+    <div class="rv-person">
+     <div class="rv-avatar">
+      <img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0410.PNG" alt="Blessing N." loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0410.PNG'"/>
+     </div>
+     <span class="rv-name">Blessing N.</span>
+    </div>
+   </div>
+
+   <div class="rv-card sr d6">
+    <div class="rv-stars">★★★★★ <span class="rv-rating">5.0</span></div>
+    <p class="rv-text">"I described my vision once. Once. They translated it perfectly. My hair left TEJ looking like it had a whole editorial shoot planned for it."</p>
+    <div class="rv-person">
+     <div class="rv-avatar">
+      <img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0404.PNG" alt="Chioma B." loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0404.PNG'"/>
+     </div>
+     <span class="rv-name">Chioma B.</span>
+    </div>
    </div>
 
   </div>
@@ -1145,106 +1155,98 @@
 </section>
 
 <style>
- .rev-arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:#fff;border:1.5px solid var(--linen);color:var(--espresso);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.08);transition:box-shadow .25s;z-index:5;}
- .rev-arrow:hover{box-shadow:0 6px 24px rgba(0,0,0,.14);}
- .rev-arrow-l{left:-1.5rem;}
- .rev-arrow-r{right:-1.5rem;}
- @media(max-width:768px){
-  .rev-arrow-l{left:.5rem;}
-  .rev-arrow-r{right:.5rem;}
-  .rev-arrow{top:auto;bottom:1rem;transform:none;width:36px;height:36px;}
- }flex-shrink:0;padding:0 0.5rem;}
- .rev-row{display:grid;grid-template-columns:220px 1fr;gap:3rem;align-items:center;padding:2.5rem 0;}
- .rev-row-img{border-radius:16px;overflow:hidden;aspect-ratio:3/4;flex-shrink:0;}
- .rev-row-img img{width:100%;height:100%;object-fit:cover;display:block;}
- .rev-row-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;font-weight:300;color:var(--espresso);line-height:1.7;margin-bottom:1.2rem;}
- .rev-row-author{font-family:'Inter',sans-serif;font-size:.8rem;font-weight:500;color:var(--mink);letter-spacing:.05em;}
- .rv-dot{width:7px;height:7px;border-radius:50%;border:none;background:var(--linen);cursor:pointer;padding:0;transition:background .3s,width .3s,border-radius .3s;}
- .rv-dot-on{background:var(--clay);width:20px;border-radius:4px;}
- @media(max-width:768px){
-  /* Each slide stacks: image on top, text below */
-  .rev-row{
-    grid-template-columns:1fr!important;
-    gap:1.2rem!important;
-    padding:1.5rem 0!important;
-  }
-  /* Image: square-ish, full width, well-fitted */
-  .rev-row-img{
-    aspect-ratio:4/3!important;
-    border-radius:14px!important;
-    width:100%!important;
-    max-height:260px;
-    overflow:hidden;
-  }
-  .rev-row-img img{
-    width:100%!important;
-    height:100%!important;
-    object-fit:cover!important;
-    object-position:center top!important;
-  }
-  .rev-row-quote{font-size:.95rem!important;margin-bottom:.8rem!important;}
-  .rev-row-author{font-size:.78rem!important;}
-  /* Hide arrows on mobile — swipe instead */
-  #rev-car + button, #rev-car ~ button{display:none!important;}
+ .rv-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
  }
+ .rv-card{
+  background:#fff;
+  border-radius:16px;
+  padding:1.8rem;
+  border:1px solid var(--linen);
+  display:flex;
+  flex-direction:column;
+  gap:1.2rem;
+  transition:box-shadow .3s,transform .3s;
+ }
+ .rv-card:hover{box-shadow:0 8px 32px rgba(46,31,22,.1);transform:translateY(-4px);}
+ .rv-stars{color:var(--clay);font-size:1rem;letter-spacing:.05em;display:flex;align-items:center;gap:.5rem;}
+ .rv-rating{font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;color:var(--mink);}
+ .rv-text{font-size:.9rem;color:#3d2a1a;line-height:1.75;flex:1;}
+ .rv-person{display:flex;align-items:center;gap:.8rem;margin-top:auto;}
+ .rv-avatar{
+  width:44px;height:44px;border-radius:50%;
+  overflow:hidden;flex-shrink:0;
+  border:2px solid var(--linen);
+ }
+ .rv-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+ .rv-name{font-family:'Inter',sans-serif;font-size:.88rem;font-weight:600;color:var(--espresso);}
+ @media(max-width:1024px){.rv-grid{grid-template-columns:repeat(2,1fr)!important;}}
+ @media(max-width:640px){.rv-grid{grid-template-columns:1fr!important;}}
 </style>
-<script>
- (function(){
-  const track=document.getElementById('rev-track');
-  const total=3;
-  let cur=0,tmr;
-  function go(n){
-   cur=(n+total)%total;
-   track.style.transform=`translateX(-${cur*100}%)`;
-   document.querySelectorAll('.rv-dot').forEach((d,i)=>{
-    d.classList.toggle('rv-dot-on',i===cur);
-   });
-  }
-  window.revSlide=d=>{go(cur+d);reset();};
-  window.revGoTo=i=>{go(i);reset();};
-  function reset(){clearInterval(tmr);tmr=setInterval(()=>go(cur+1),5000);}
-  reset();
-  // Swipe
-  let sx=0;
-  track.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});
-  track.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){revSlide(dx<0?1:-1);}});
- })();
-</script>
 
 <!-- ══════════════ IMAGE SCROLL STRIP ══════════════ -->
-<div style="background:var(--parch2);padding:3rem 0;overflow:hidden;border-top:1px solid var(--linen);">
-  <div style="overflow:hidden;border-radius:0;">
-    <div class="wc-track" style="position:static;transform:translateX(0);" id="img-strip-track">
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0408.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0408.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0416.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0416.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0417.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0417.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0412.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0412.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0410.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0410.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0404.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0404.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0407.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0407.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0419.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0419.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0421.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0421.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0418.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0418.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0399.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0399.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0401.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0401.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0408.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0408.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0416.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0416.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0417.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0417.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0412.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0412.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0410.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0410.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0404.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0404.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0407.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0407.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0419.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0419.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0421.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0421.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0418.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0418.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0399.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0399.PNG'"/></div>
-   <div class="wci"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0401.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0401.PNG'"/></div>
-    </div>
+<div class="sc-strip">
+  <div class="sc-track">
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0408.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0408.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0416.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0416.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0417.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0417.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0412.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0412.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0410.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0410.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0404.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0404.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0407.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0407.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0419.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0419.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0421.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0421.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0418.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0418.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0399.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0399.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0401.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0401.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0408.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0408.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0416.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0416.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0417.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0417.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0412.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0412.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0410.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0410.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0404.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0404.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0407.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0407.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0419.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0419.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0421.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0421.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0418.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0418.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0399.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0399.PNG'"/></div>
+    <div class="sc-card"><img src="https://raw.githubusercontent.com/Ghidigram/tej.salon/main/IMG_0401.PNG" alt="TEJ" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='IMG_0401.PNG'"/></div>
   </div>
 </div>
+
 <style>
-  #img-strip-track{height:380px;}
-  @media(max-width:768px){#img-strip-track{height:240px;}}
+ .sc-strip{
+  overflow:hidden;
+  padding:2rem 0;
+  background:var(--parch2);
+  border-top:1px solid var(--linen);
+ }
+ .sc-track{
+  display:flex;
+  gap:1rem;
+  width:max-content;
+  animation:scScroll 35s linear infinite;
+ }
+ .sc-track:hover{animation-play-state:paused;}
+ @keyframes scScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+ .sc-card{
+  width:280px;height:200px;
+  border-radius:18px;
+  overflow:hidden;
+  flex-shrink:0;
+ }
+ .sc-card img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  display:block;
+  transition:transform .4s ease;
+ }
+ .sc-card:hover img{transform:scale(1.05);}
+ @media(max-width:768px){
+  .sc-card{width:200px;height:150px;border-radius:14px;}
+ }
 </style>
 
 <!-- ══════════════ CTA ══════════════ -->
@@ -1387,7 +1389,5 @@
  function closeBooking(){const m=document.getElementById('booking-modal');m.classList.remove('active');setTimeout(()=>{m.style.display='none';document.body.style.overflow='';},200);}
  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeBooking();});
 </script>
-</body>
-</html>
 </body>
 </html>
